@@ -1,6 +1,6 @@
 {
   "name": "@axe/rem-resize",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "A flexible rem layout for h5.",
   "main": "lib/index.js",
   "keywords": [
