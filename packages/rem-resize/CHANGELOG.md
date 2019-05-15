@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/ansenhuang/axe/compare/@axe/rem-resize@0.2.7...@axe/rem-resize@0.3.0) (2019-05-15)
+
+
+### Features
+
+* viewport fit ([4894d74](https://github.com/ansenhuang/axe/commit/4894d74))
+
+
+
+
+
 <a name="0.2.7"></a>
 ## [0.2.7](https://github.com/ansenhuang/axe/compare/@axe/rem-resize@0.2.6...@axe/rem-resize@0.2.7) (2018-10-04)
 

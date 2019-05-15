@@ -1,6 +1,6 @@
 {
   "name": "@axe/slideshow",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A library created by fle-cli.",
   "main": "lib/index.js",
   "keywords": [

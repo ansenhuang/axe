@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.3](https://github.com/ansenhuang/axe/compare/@axe/modal@0.2.2...@axe/modal@0.2.3) (2019-05-15)
+
+
+### Bug Fixes
+
+* style name ([4b1cc8e](https://github.com/ansenhuang/axe/commit/4b1cc8e))
+
+
+
+
+
 <a name="0.2.2"></a>
 ## [0.2.2](https://github.com/ansenhuang/axe/compare/@axe/modal@0.2.1...@axe/modal@0.2.2) (2018-10-17)
 
