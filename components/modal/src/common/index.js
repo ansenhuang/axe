@@ -31,8 +31,8 @@ export class Modal {
     els.title.className = mcss.title
     els.content.className = mcss.content
     els.btnWrap.className = mcss.btnWrap
-    els.confirm.className = [mcss.btn, mcss.confirm].join(' ')
-    els.cancel.className = [mcss.btn, mcss.cancel].join(' ')
+    els.confirm.className = [mcss.btn, mcss.btnConfirm].join(' ')
+    els.cancel.className = [mcss.btn, mcss.btnCancel].join(' ')
   }
 
   _initEventListener () {

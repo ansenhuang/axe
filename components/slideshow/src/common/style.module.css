@@ -1,14 +1,14 @@
 .slide {
   height: 100%;
+}
 
-  &-item {
-    float: left;
-    height: 100%;
+.slideItem {
+  float: left;
+  height: 100%;
+}
 
-    img {
-      width: 100%;
-    }
-  }
+.slideItem img {
+  width: 100%;
 }
 
 .indicator {
@@ -22,19 +22,19 @@
   justify-content: center;
   padding: 0;
   margin: 0;
+}
 
-  &-item {
-    float: left;
-    margin: 0 8rpx 0;
-    padding: 0;
-    width: 16rpx;
-    height: 16rpx;
-    border-radius: 50%;
-    background-color: #fff;
-    opacity: .3;
+.indicatorItem {
+  float: left;
+  margin: 0 8rpx 0;
+  padding: 0;
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  opacity: .3;
+}
 
-    &-active {
-      opacity: 1;
-    }
-  }
+.indicatorItemActive {
+  opacity: 1;
 }

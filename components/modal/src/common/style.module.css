@@ -44,7 +44,7 @@
   word-wrap: break-word;
 }
 
-.btn-wrap {
+.btnWrap {
   display: flex;
   border-top: 1rpx solid #e5e5e5;
 }
@@ -58,15 +58,15 @@
   text-align: center;
   line-height: 80rpx;
   background-color: transparent;
+}
 
-  &.confirm {
-    color: #333;
-  }
+.btnConfirm {
+  color: #333;
+}
 
-  &.cancel {
-    color: #999;
-    border-right: 1px solid #e5e5e5;
-  }
+.btnCancel {
+  color: #999;
+  border-right: 1px solid #e5e5e5;
 }
 
 @keyframes __modal_bounce_enter__ {
