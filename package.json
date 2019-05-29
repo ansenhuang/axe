@@ -20,7 +20,7 @@
     "postbuild": "yarn build:declarations",
     "test": "jest",
     "fix": "run-p -c 'lint:ts-* --fix'",
-    "lint:css": "stylelint 'packages/**/*.css'",
+    "lint:css": "stylelint 'packages/**/*.ts'",
     "lint:ts-prod": "tslint --config tslint.prod.json 'packages/**/*.ts'",
     "lint:ts-test": "tslint --config tslint.test.json 'packages/**/*.test.ts'",
     "lint:ts": "run-p -c lint:ts-*",
