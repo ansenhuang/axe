@@ -7,15 +7,14 @@ module.exports = (api) => {
         '@babel/env',
         {
           targets: {
-            browsers: 'Last 2 Chrome versions, Firefox ESR',
+            browsers: [
+              '>1%',
+              'last 4 versions',
+              'Firefox ESR',
+              'not ie < 11'
+            ],
             node: '8.9',
           },
-        },
-      ],
-      [
-        '@babel/preset-react',
-        {
-          development: process.env.NODE_ENV !== 'production',
         },
       ],
       '@babel/preset-typescript',
@@ -23,12 +22,8 @@ module.exports = (api) => {
     env: {
       production: {
         ignore: [
-          '**/*.test.tsx',
           '**/*.test.ts',
-          '**/*.story.tsx',
-          '__snapshots__',
           '__tests__',
-          '__stories__',
         ],
       },
     },

@@ -4,6 +4,6 @@
     "no-implicit-dependencies": true
   },
   "linterOptions": {
-    "exclude": ["**/*.d.ts", "**/*.{test,story}.ts{,x}"]
+    "exclude": ["**/*.d.ts", "**/*.test.ts"]
   }
 }

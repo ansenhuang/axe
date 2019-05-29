@@ -5,6 +5,6 @@
     "emitDeclarationOnly": true,
     "declaration": true
   },
-  "exclude": ["**/*.story.*", "**/*.test.*", "lib"],
+  "exclude": ["**/*.test.*", "lib"],
   "include": []
 }

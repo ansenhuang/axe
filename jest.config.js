@@ -15,19 +15,16 @@ module.exports = {
       extends: './babel.config.js',
     },
   },
-  moduleFileExtensions: ['ts', 'tsx', 'js'],
+  moduleFileExtensions: ['ts', 'js'],
   modulePathIgnorePatterns: ['lib'],
   moduleNameMapper: {
     '@axe/(.+)$': '<rootDir>packages/$1/src',
   },
-  notify: true,
+  notify: false,
   notifyMode: 'always',
   roots: ['<rootDir>packages'],
-  testMatch: ['**/__tests__/*.+(ts|tsx|js)', '**/*.test.+(ts|tsx|js)'],
+  testMatch: ['**/__tests__/*.+(ts|js)', '**/*.test.+(ts|js)'],
   transform: {
-    '^.+\\.(ts|tsx)$': 'ts-jest',
+    '^.+\\.ts$': 'ts-jest',
   },
-  // setupTestFrameworkScriptFile: '<rootDir>jest/setupTests.ts',
-  setupFilesAfterEnv: ['<rootDir>jest/setupTests.ts'],
-  snapshotSerializers: ['enzyme-to-json/serializer'],
 };

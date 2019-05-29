@@ -1,7 +1,6 @@
 {
   "extends": [
     "tslint:latest",
-    "tslint-react",
     "tslint-plugin-prettier",
     "tslint-config-prettier"
   ],
@@ -11,8 +10,7 @@
       true,
       "single",
       "avoid-escape",
-      "avoid-template",
-      "jsx-double"
+      "avoid-template"
     ],
     "no-implicit-dependencies": false,
     "interface-name": false
