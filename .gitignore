@@ -1,5 +1,8 @@
 .DS_Store
 .vscode/
 node_modules/
-test/
 *.log*
+
+coverage/
+lib/
+storybook-static/

@@ -1,0 +1,28 @@
+{
+  "name": "@axe/input",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "ansenhuang <ancheng1992@126.com>",
+  "homepage": "https://github.com/ansenhuang/axe#readme",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {},
+  "publishConfig": {
+    "registry": "http://localhost:4873"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansenhuang/axe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ansenhuang/axe/issues"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "styled-components": "^3.4.10"
+  }
+}
