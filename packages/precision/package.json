@@ -1,0 +1,25 @@
+{
+  "name": "@axe/precision",
+  "version": "1.0.0",
+  "description": "Calculate float number in JavaScript precisely.",
+  "author": "ansenhuang <ancheng1992@126.com>",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "yarn build:js && yarn build:ts",
+    "build:js": "NODE_ENV=production babel src --root-mode upward --out-dir lib --source-maps --extensions .ts --delete-dir-on-start --no-comments",
+    "build:ts": "tsc --build tsconfig.prod.json"
+  },
+  "homepage": "https://github.com/ansenhuang/axe/tree/master/packages/precision#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansenhuang/axe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ansenhuang/axe/issues"
+  }
+}
