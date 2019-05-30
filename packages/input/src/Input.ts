@@ -14,10 +14,10 @@
 
 // export type InputLabelProps = InputWithLabelProps | InputWithoutLabelProps;
 
-// export interface InputProps {
-//   name?: string;
-//   type?: string;
-// }
+export interface InputProps {
+  name?: string;
+  type?: string;
+}
 
 export class Input {
   public get() {
