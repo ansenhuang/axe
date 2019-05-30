@@ -15,7 +15,7 @@
   "scripts": {
     "prebuild": "yarn lint",
     "build": "lerna run build",
-    "test": "jest --coverage",
+    "test": "jest",
     "test:watch": "jest --watch",
     "lint:css": "stylelint 'packages/**/*.css'",
     "lint:ts-prod": "tslint --config tslint.prod.json 'packages/**/*.ts'",
