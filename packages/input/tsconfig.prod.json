@@ -1,9 +1,0 @@
-{
-  "extends": "../../tsconfig.prod.json",
-  "compilerOptions": {
-    "declarationDir": "./lib",
-    "rootDir": "./src",
-    "baseUrl": "./"
-  },
-  "include": ["./src"]
-}
