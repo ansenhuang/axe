@@ -37,8 +37,6 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
-    "@commitlint/cli": "^7.6.1",
-    "@commitlint/config-conventional": "^7.6.0",
     "@types/jest": "^24.0.13",
     "babel-core": "7.0.0-bridge.0",
     "commitizen": "^3.1.1",
@@ -60,10 +58,5 @@
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
   }
 }
