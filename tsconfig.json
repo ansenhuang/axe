@@ -15,5 +15,5 @@
     }
   },
   "include": ["packages"],
-  "exclude": ["node_modules", "packages/**/lib", "packages/**/typings"]
+  "exclude": ["node_modules", "packages/**/lib"]
 }

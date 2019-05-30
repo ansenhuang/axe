@@ -4,17 +4,12 @@ module.exports = (api) => {
   return {
     presets: [
       [
-        '@babel/env',
+        '@babel/preset-env',
         {
-          targets: {
-            browsers: [
-              '>1%',
-              'last 4 versions',
-              'Firefox ESR',
-              'not ie < 11'
-            ],
-            node: '8.9',
-          },
+          loose: true,
+          modules: false,
+          useBuiltIns: 'usage',
+          corejs: 3,
         },
       ],
       '@babel/preset-typescript',
@@ -22,8 +17,7 @@ module.exports = (api) => {
     env: {
       production: {
         ignore: [
-          '**/*.test.ts',
-          '__tests__',
+          '**/*.test.ts'
         ],
       },
     },
