@@ -6,10 +6,15 @@
   "homepage": "https://github.com/ansenhuang/axe#readme",
   "license": "MIT",
   "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "typings": "typings/index.d.ts",
   "files": [
     "lib"
   ],
+  "scripts": {
+    "build": "yarn build:lib && yarn build:typings",
+    "build:lib": "NODE_ENV=production babel src --root-mode upward --out-dir lib --source-maps --extensions .ts --delete-dir-on-start --no-comments",
+    "build:typings": "tsc --build tsconfig.prod.json"
+  },
   "publishConfig": {
     "registry": "http://localhost:4873"
   },

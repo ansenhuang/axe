@@ -5,14 +5,9 @@
     "tslint-config-prettier"
   ],
   "rules": {
-    "prettier": true,
-    "quotemark": [
-      true,
-      "single",
-      "avoid-escape",
-      "avoid-template"
-    ],
-    "no-implicit-dependencies": false,
-    "interface-name": false
+    "prettier": true
+  },
+  "linterOptions": {
+    "include": ["packages/**/*.ts"]
   }
 }

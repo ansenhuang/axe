@@ -13,17 +13,19 @@
     "npm": ">= 5.0.0"
   },
   "scripts": {
+    "prebuild": "yarn lint",
+    "build": "lerna run build",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch",
+    "lint:css": "stylelint 'packages/**/*.css'",
+    "lint:ts-prod": "tslint --config tslint.prod.json",
+    "lint:ts-test": "tslint --config tslint.test.json",
+    "lint": "yarn lint:ts-prod && yarn lint:ts-test",
+    "fix:css": "stylelint --fix 'packages/**/*.css'",
+    "fix:ts-prod": "tslint --config tslint.prod.json --fix",
+    "fix:ts-test": "tslint --config tslint.test.json --fix",
+    "fix": "yarn fix:ts-prod && yarn fix:ts-test",
     "commit": "git-cz",
-    "prebuild": "run-p lint",
-    "build": "lerna exec --parallel 'NODE_ENV=production babel src --root-mode upward --out-dir lib --source-maps --extensions .ts --delete-dir-on-start --no-comments'",
-    "build:declarations": "lerna exec --parallel 'tsc --build tsconfig.prod.json'",
-    "postbuild": "yarn build:declarations",
-    "test": "jest",
-    "fix": "run-p -c 'lint:ts-* --fix'",
-    "lint:css": "stylelint 'packages/**/*.ts'",
-    "lint:ts-prod": "tslint --config tslint.prod.json 'packages/**/*.ts'",
-    "lint:ts-test": "tslint --config tslint.test.json 'packages/**/*.test.ts'",
-    "lint": "run-p -c lint:*",
     "prerelease": "yarn build",
     "release": "lerna publish"
   },
@@ -35,13 +37,14 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-conventional": "^7.1.2",
     "@types/jest": "^24.0.13",
     "babel-core": "7.0.0-bridge.0",
     "commitizen": "^3.1.1",
     "cz-lerna-changelog": "^2.0.2",
     "jest": "^24.8.0",
     "lerna": "^3.14.1",
-    "npm-run-all": "^4.1.5",
     "prettier": "^1.17.1",
     "semantic-release": "^15.13.12",
     "stylelint": "^10.0.1",
@@ -56,5 +59,10 @@
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
