@@ -25,8 +25,9 @@
     "fix:ts-prod": "yarn lint:ts-prod --fix",
     "fix:ts-test": "yarn lint:ts-test --fix",
     "fix": "yarn fix:ts-prod && yarn fix:ts-test",
+    "docs": "typedoc",
     "commit": "git-cz",
-    "prerelease": "yarn build",
+    "prerelease": "yarn build && yarn docs",
     "release": "lerna publish"
   },
   "resolutions": {
@@ -52,6 +53,7 @@
     "tslint": "^5.16.0",
     "tslint-config-prettier": "^1.18.0",
     "tslint-plugin-prettier": "^2.0.1",
+    "typedoc": "^0.14.2",
     "typescript": "^3.5.1"
   },
   "config": {
