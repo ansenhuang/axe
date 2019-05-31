@@ -14,6 +14,20 @@ module.exports = (api) => {
       ],
       '@babel/preset-typescript',
     ],
+    plugins: [
+      [
+        'babel-plugin-css-modules-transform',
+        {
+          keepImport: true,
+          extractCss: {
+            dir: 'lib',
+            relativeRoot: 'src',
+            filename: '[path]/[name].css'
+          },
+          prepend: require('./postcss.config.js').plugins,
+        }
+      ],
+    ],
     env: {
       production: {
         ignore: [
