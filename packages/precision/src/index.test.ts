@@ -1,8 +1,4 @@
-import precision, {
-  getDecimalLength,
-  float2Int,
-  checkBoundary,
-} from './index';
+import precision, { checkBoundary, float2Int, getDecimalLength } from './index';
 
 describe('precision plus', () => {
   test('0.1 + 0.2', () => {
