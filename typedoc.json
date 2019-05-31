@@ -4,7 +4,7 @@
   "readme": "README.md",
   "out": "docs",
   "excludeExternals": true,
-  "excludeNotExported": true,
+  "excludeNotExported": false,
   "excludePrivate": true,
   "include": [
     "packages/**/src"

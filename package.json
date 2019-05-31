@@ -13,9 +13,9 @@
     "npm": ">= 5.0.0"
   },
   "scripts": {
-    "prebuild": "yarn lint",
+    "prebuild": "yarn fix",
     "build": "lerna run build",
-    "test": "jest",
+    "test": "jest --coverage",
     "test:watch": "jest --watch",
     "lint:css": "stylelint 'packages/**/*.css'",
     "lint:ts-prod": "tslint --config tslint.prod.json 'packages/**/*.ts'",
@@ -27,7 +27,7 @@
     "fix": "yarn fix:ts-prod && yarn fix:ts-test",
     "docs": "typedoc",
     "commit": "git-cz",
-    "prerelease": "yarn build && yarn docs",
+    "prerelease": "yarn test && yarn docs && yarn build",
     "release": "lerna publish"
   },
   "resolutions": {

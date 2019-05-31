@@ -1,7 +1,6 @@
 module.exports = {
   clearMocks: true,
   coverageDirectory: 'coverage',
-  coverageReporters: ['text', 'clover'],
   coverageThreshold: {
     global: {
       branches: 80,
