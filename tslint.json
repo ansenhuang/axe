@@ -16,6 +16,7 @@
     "no-implicit-dependencies": false,
     "interface-name": false,
     "no-console": [true, "log", "error"],
-    "object-literal-sort-keys": false
+    "object-literal-sort-keys": false,
+    "no-var-requires": false
   }
 }

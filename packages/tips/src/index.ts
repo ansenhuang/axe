@@ -8,12 +8,14 @@ interface Options {
   preventScroll?: boolean;
 }
 
+type Callback = () => void;
+
 export class Tips {
   private tipsNode: HTMLDivElement;
   private layerNode: HTMLDivElement;
   private bodyNode: HTMLDivElement;
   private preventScroll: boolean;
-  private callback: Function | undefined;
+  private callback: Callback | undefined;
   private timerId: number | undefined;
 
   constructor(el: HTMLElement = document.body) {
@@ -35,22 +37,28 @@ export class Tips {
     el.appendChild(this.tipsNode);
 
     // prevent default scroll
-    this.tipsNode.addEventListener('touchmove', (e: Event) => {
-      if (!this.preventScroll) return;
+    this.tipsNode.addEventListener(
+      'touchmove',
+      (e: Event) => {
+        if (!this.preventScroll) {
+          return;
+        }
 
-      const data = (<HTMLElement>e.target).dataset || {};
-      if (typeof data.scroll === 'undefined') {
-        e.preventDefault();
-      }
-    }, {
-      passive: false,
-      capture: false
-    });
+        const data = (e.target as HTMLElement).dataset || {};
+        if (typeof data.scroll === 'undefined') {
+          e.preventDefault();
+        }
+      },
+      {
+        passive: false,
+        capture: false,
+      },
+    );
   }
 
-  show(options: Options | string, callback?: Function): void {
+  public show(options: Options | string, callback?: Callback): void {
     if (typeof this.callback === 'function') {
-      clearTimeout(this.timerId);
+      window.clearTimeout(this.timerId);
       this.callback();
       this.callback = undefined;
     }
@@ -59,7 +67,8 @@ export class Tips {
       options = { content: options };
     }
 
-    this.tipsNode.style.zIndex = typeof options.zIndex === 'number' ? '' + options.zIndex : null;
+    this.tipsNode.style.zIndex =
+      typeof options.zIndex === 'number' ? '' + options.zIndex : null;
     this.preventScroll = options.preventScroll !== false;
     if (!options.contentHtml) {
       this.bodyNode.textContent = options.content || '';
@@ -78,7 +87,7 @@ export class Tips {
     }, options.duration || 2000);
   }
 
-  hide(): void {
+  public hide(): void {
     this.tipsNode.style.display = 'none';
   }
 }
