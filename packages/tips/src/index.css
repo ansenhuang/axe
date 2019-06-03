@@ -30,8 +30,8 @@
   text-align: center;
   word-wrap: break-word;
   border-radius: 0.3em;
-  background-color: rgba(0, 0, 0, .7);
-  animation: tipsBounceEnter .75s ease;
+  background-color: rgba(0, 0, 0, 0.7);
+  animation: tipsBounceEnter 0.75s ease;
 }
 
 .test-aa {
@@ -41,7 +41,7 @@
 @keyframes tipsBounceEnter {
   0% {
     opacity: 0;
-    transform: scale3d(.3, .3, .3);
+    transform: scale3d(0.3, 0.3, 0.3);
   }
 
   20% {
