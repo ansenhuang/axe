@@ -9,6 +9,10 @@
     "removeComments": true,
     "rootDir": "./",
     "baseUrl": "./",
+    "typeRoots": [
+      "node_modules/@types",
+      "typings"
+    ],
     "paths": {
       "@axe/*": ["packages/*/src"],
       "*": ["node_modules"]
