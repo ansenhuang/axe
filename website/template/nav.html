@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>页面导航</title>
+</head>
+<body>
+  <ul>
+    <% for (var i = 0, entryPoints = htmlWebpackPlugin.options.entryPoints; i < entryPoints.length; i++) { %>
+      <li><a href="/<%= entryPoints[i] %>.html"><%= entryPoints[i] %></a></li>
+    <% } %>
+  </ul>
+</body>
+</html>
