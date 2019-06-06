@@ -6,10 +6,5 @@
   "excludeExternals": true,
   "excludeNotExported": false,
   "excludePrivate": true,
-  "include": [
-    "packages/**/src"
-  ],
-  "exclude": [
-    "**/*.test.ts"
-  ]
+  "includeDeclarations": false
 }

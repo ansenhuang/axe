@@ -1,4 +1,4 @@
-const styles = require('./index.css');
+import styles from './index.css';
 
 interface Options {
   zIndex?: number;

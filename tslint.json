@@ -18,5 +18,8 @@
     "no-console": [true, "log", "error"],
     "object-literal-sort-keys": false,
     "no-var-requires": false
+  },
+  "linterOptions": {
+    "exclude": ["**/*.test.ts", "**/lib/**/*"]
   }
 }
