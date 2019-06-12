@@ -11,7 +11,7 @@
     "baseUrl": "./",
     "typeRoots": [
       "node_modules/@types",
-      "typings"
+      "definitions"
     ],
     "paths": {
       "@axe/*": ["packages/*/src"],
