@@ -24,6 +24,7 @@ module.exports = {
           'babel-plugin-css-modules-transform',
           {
             keepImport: true,
+            generateScopedName: '[local]___[hash:base64:5]',
             extractCss: {
               dir: 'lib',
               relativeRoot: 'src',

@@ -5,6 +5,7 @@
   "author": "ansenhuang <ancheng1992@126.com>",
   "license": "MIT",
   "main": "lib/index.js",
+  "unpkg": "src/index.ts",
   "typings": "lib/index.d.ts",
   "files": [
     "lib"

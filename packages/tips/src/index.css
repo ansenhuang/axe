@@ -34,10 +34,6 @@
   animation: tipsBounceEnter 0.75s ease;
 }
 
-.test-aa {
-  font-size: 18px;
-}
-
 @keyframes tipsBounceEnter {
   0% {
     opacity: 0;

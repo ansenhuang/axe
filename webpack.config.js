@@ -7,7 +7,8 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isEnvProduction = process.env.NODE_ENV === 'production';
-const entryPoints = fs.readdirSync(path.resolve('src'));
+const entryPoints = fs.readdirSync(path.resolve('examples'));
+const defaultHtml = path.resolve('templates/index.html');
 const htmlMinify = {
   removeComments: true,
   collapseWhitespace: true,
@@ -25,7 +26,7 @@ module.exports = {
   mode: isEnvProduction ? 'production' : 'development',
   devtool: isEnvProduction ? 'source-map' : 'cheap-module-source-map',
   entry: entryPoints.reduce((obj, name) => {
-    obj[name] = path.resolve('src', name, 'index.ts');
+    obj[name] = path.resolve('examples', name, 'index.ts');
     return obj;
   }, {}),
   output: {
@@ -43,12 +44,12 @@ module.exports = {
   },
   resolve: {
     modules: [
-      path.resolve('../packages'),
       path.resolve('node_modules'),
     ],
     extensions: ['.ts', '.js'],
+    mainFields: isEnvProduction ? ['main'] : ['unpkg', 'main'],
     alias: {
-      '@': path.resolve('src'),
+      '@axe': path.resolve('packages'),
     }
   },
   module: {
@@ -56,21 +57,14 @@ module.exports = {
       {
         test: /\.ts$/,
         enforce: 'pre',
-        include: path.resolve('src'),
         loader: 'tslint-loader',
         options: {
           fix: true,
-          configFile: path.join(__dirname, '../tslint.json'),
         }
       },
       {
         test: /\.ts$/,
-        include: path.resolve('src'),
         loader: 'babel-loader',
-        options: {
-          babelrc: false,
-          configFile: path.join(__dirname, '../babel.config.js'),
-        }
       },
       {
         test: /\.css$/,
@@ -82,15 +76,16 @@ module.exports = {
               reloadAll: true,
             }
           },
-          'css-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[local]___[hash:base64:5]',
+            }
+          },
           {
             loader: 'postcss-loader',
-            options: {
-              config: {
-                path: path.join(__dirname, '../postcss.config.js'),
-              }
-            }
-          }
+          },
         ]
       },
       {
@@ -106,8 +101,7 @@ module.exports = {
   plugins: [
     new StyleLintPlugin({
       fix: true,
-      files: ['src/**/*.css'],
-      configFile: path.join(__dirname, '../.stylelintrc'),
+      files: ['examples/**/*.css', 'packages/**/*.css'],
     }),
     isEnvProduction && new CleanWebpackPlugin(),
     !isEnvProduction && new FriendlyErrorsWebpackPlugin({
@@ -125,21 +119,22 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: false,
-      template: path.resolve('template/nav.html'),
+      template: path.resolve('templates/nav.html'),
       filename: 'index.html',
       chunks: false,
       minify: isEnvProduction && htmlMinify,
       entryPoints,
     }),
-    ...entryPoints.map(point =>
-      new HtmlWebpackPlugin({
+    ...entryPoints.map(point => {
+      const htmlFile = path.resolve('examples', point, 'index.html');
+      return new HtmlWebpackPlugin({
         inject: true,
-        template: path.resolve('src', point, 'index.html'),
+        template: fs.existsSync(htmlFile) ? htmlFile : defaultHtml,
         filename: point + '.html',
         chunks: ['runtime', point],
         minify: isEnvProduction && htmlMinify,
       })
-    ),
+    }),
   ].filter(Boolean),
   stats: {
     entrypoints: false,

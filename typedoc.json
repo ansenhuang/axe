@@ -6,5 +6,6 @@
   "excludeExternals": true,
   "excludeNotExported": false,
   "excludePrivate": true,
-  "includeDeclarations": false
+  "includeDeclarations": false,
+  "exclude": ["examples/**/*"]
 }

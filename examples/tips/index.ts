@@ -1,4 +1,4 @@
-import tips from 'tips';
+import tips from '@axe/tips';
 import css from './style.css';
 
 console.info(tips);

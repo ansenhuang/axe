@@ -20,6 +20,6 @@
     "no-var-requires": false
   },
   "linterOptions": {
-    "exclude": ["**/*.test.ts", "**/lib/**/*"]
+    "exclude": ["node_modules", "**/*.test.ts", "**/lib/**/*"]
   }
 }
