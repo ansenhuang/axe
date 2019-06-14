@@ -13,13 +13,13 @@ const entryPoints = fs.readdirSync(path.resolve('packages'));
 
 export default entryPoints.map(point => {
   const baseDir = path.resolve('packages', point);
-  const moduleName = '@axe/' + point;
+  const moduleName = '$axe_' + point;
   return {
     input: path.join(baseDir, 'src/index.ts'),
     output: [
       { file: path.join(baseDir, 'lib/index.cjs.js'), format: 'cjs', sourcemap: true, exports: moduleExports },
       { file: path.join(baseDir, 'lib/index.esm.js'), format: 'esm', sourcemap: true },
-      { file: path.join(baseDir, 'lib/index.iife.js'), format: 'iife', sourcemap: true, name: moduleName, exports: moduleExports, extend: true },
+      { file: path.join(baseDir, 'lib/index.umd.js'), format: 'umd', sourcemap: true, name: moduleName, exports: moduleExports },
     ].filter(Boolean),
     external: id => {
       return id.indexOf('core-js') !== -1;

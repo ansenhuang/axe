@@ -47,10 +47,10 @@ module.exports = {
       path.resolve('node_modules'),
     ],
     extensions: ['.ts', '.js'],
-    mainFields: isEnvProduction ? ['module'] : ['unpkg', 'module'],
+    mainFields: isEnvProduction ? ['module', 'main'] : ['unpkg', 'module', 'main'],
     alias: {
       '@axe': path.resolve('packages'),
-    }
+    },
   },
   module: {
     rules: [
@@ -63,7 +63,7 @@ module.exports = {
         }
       },
       {
-        test: /\.ts$/,
+        test: /\.(ts|js)$/,
         loader: 'babel-loader',
       },
       {
@@ -79,8 +79,9 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
-              localIdentName: '[local]___[hash:base64:5]',
+              modules: {
+                localIdentName: '[local]--[hash:base64:5]',
+              },
             }
           },
           {
@@ -150,5 +151,8 @@ module.exports = {
     historyApiFallback: true,
     quiet: true,
     noInfo: false,
+    watchOptions: {
+      ignored: /node_modules/
+    },
   }
 };
