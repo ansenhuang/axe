@@ -47,7 +47,7 @@ module.exports = {
       path.resolve('node_modules'),
     ],
     extensions: ['.ts', '.js'],
-    mainFields: isEnvProduction ? ['main'] : ['unpkg', 'main'],
+    mainFields: isEnvProduction ? ['module'] : ['unpkg', 'module'],
     alias: {
       '@axe': path.resolve('packages'),
     }

@@ -6,5 +6,6 @@ node_modules/
 
 coverage/
 docs/
-lib/
 dist/
+lib/
+/packages/**/src/**/*.d.ts

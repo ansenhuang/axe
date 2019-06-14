@@ -7,5 +7,5 @@
   "excludeNotExported": false,
   "excludePrivate": true,
   "includeDeclarations": false,
-  "exclude": ["examples/**/*"]
+  "exclude": ["examples/**/*", "**/*.test.ts"]
 }

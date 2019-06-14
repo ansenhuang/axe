@@ -3,6 +3,9 @@
   "compilerOptions": {
     "noEmit": false,
     "declaration": true,
-    "emitDeclarationOnly": true
-  }
+    "emitDeclarationOnly": true,
+    "isolatedModules": true
+  },
+  "include": ["packages/**/src"],
+  "exclude": ["**/*.test.ts"]
 }

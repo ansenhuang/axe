@@ -9,15 +9,14 @@
     "removeComments": true,
     "rootDir": "./",
     "baseUrl": "./",
-    "typeRoots": [
-      "node_modules/@types",
-      "definitions"
-    ],
     "paths": {
       "@axe/*": ["packages/*/src"],
       "*": ["node_modules"]
     }
   },
+  "files": [
+    "./definitions/index.d.ts"
+  ],
   "include": ["packages/**/src", "examples"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "exclude": ["node_modules", "**/lib"]
 }

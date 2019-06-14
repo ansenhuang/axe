@@ -2,8 +2,6 @@ module.exports = {
   ignore: [
     'node_modules',
     'packages/**/lib',
-    '**/*.test.ts',
-    '**/*.d.ts',
   ],
   presets: [
     [
@@ -17,23 +15,4 @@ module.exports = {
     ],
     '@babel/preset-typescript',
   ],
-  env: {
-    library: {
-      plugins: [
-        [
-          'babel-plugin-css-modules-transform',
-          {
-            keepImport: true,
-            generateScopedName: '[local]___[hash:base64:5]',
-            extractCss: {
-              dir: 'lib',
-              relativeRoot: 'src',
-              filename: '[path]/[name].css'
-            },
-            prepend: require('./postcss.config.js').plugins,
-          }
-        ],
-      ],
-    },
-  },
 };
