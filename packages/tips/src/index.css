@@ -1,5 +1,5 @@
 .tips {
-  font-size: inherit;
+  font-size: 14px;
   position: fixed;
   top: 0;
   left: 0;
@@ -22,8 +22,9 @@
 }
 
 .body {
+  min-width: 8.58em;
   max-width: 72%;
-  padding: 0.8em;
+  padding: 0.7em;
   font-size: 1em;
   color: #fff;
   line-height: 1.5;

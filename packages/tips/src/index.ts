@@ -26,6 +26,7 @@ export class Tips {
     this.bodyNode = document.createElement('div');
     // hide tips by default
     this.tipsNode.style.display = 'none';
+
     // add className
     this.tipsNode.className = styles.tips;
     this.layerNode.className = styles.layer;
@@ -33,8 +34,8 @@ export class Tips {
     // apppend element
     this.tipsNode.appendChild(this.layerNode);
     this.tipsNode.appendChild(this.bodyNode);
-    // append in view
-    el.appendChild(this.tipsNode);
+
+    this.setScale(document.documentElement.clientWidth / 750);
 
     // prevent default scroll
     this.tipsNode.addEventListener(
@@ -54,6 +55,15 @@ export class Tips {
         capture: false,
       },
     );
+
+    // append in view
+    el.appendChild(this.tipsNode);
+  }
+
+  public setScale(scale?: number): void {
+    if (scale) {
+      this.tipsNode.style.fontSize = 28 * scale + 'px';
+    }
   }
 
   public show(options: Options | string, callback?: Callback): void {
