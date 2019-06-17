@@ -8,4 +8,4 @@ coverage/
 docs/
 dist/
 lib/
-/packages/**/src/**/*.d.ts
+typings/
