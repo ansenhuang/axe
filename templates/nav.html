@@ -7,8 +7,8 @@
 </head>
 <body>
   <ul>
-    <% for (var i = 0, entryPoints = htmlWebpackPlugin.options.entryPoints; i < entryPoints.length; i++) { %>
-      <li><a href="/<%= entryPoints[i] %>.html"><%= entryPoints[i] %></a></li>
+    <% for (var i = 0; i < htmlWebpackPlugin.options.entryPoints.length; i++) { %>
+      <li><a href="<%= htmlWebpackPlugin.options.publicPath %><%= htmlWebpackPlugin.options.entryPoints[i] %>.html"><%= htmlWebpackPlugin.options.entryPoints[i] %></a></li>
     <% } %>
   </ul>
 </body>

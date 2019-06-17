@@ -2,7 +2,7 @@
   "name": "@axe",
   "mode": "modules",
   "readme": "README.md",
-  "out": "docs",
+  "out": "website/docs",
   "excludeExternals": true,
   "excludeNotExported": false,
   "excludePrivate": true,

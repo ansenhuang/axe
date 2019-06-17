@@ -8,6 +8,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isEnvProduction = process.env.NODE_ENV === 'production';
 const entryPoints = fs.readdirSync(path.resolve('examples'));
+const publicPath = isEnvProduction ? '/examples/' : '/';
 const defaultHtml = path.resolve('templates/index.html');
 const htmlMinify = {
   removeComments: true,
@@ -30,8 +31,8 @@ module.exports = {
     return obj;
   }, {}),
   output: {
-    publicPath: '/',
-    path: path.resolve('dist'),
+    publicPath,
+    path: path.resolve('website/examples'),
     filename: isEnvProduction
       ? 'static/js/[name].[contenthash:8].js'
       : 'static/js/[name].js',
@@ -124,6 +125,7 @@ module.exports = {
       filename: 'index.html',
       chunks: false,
       minify: isEnvProduction && htmlMinify,
+      publicPath,
       entryPoints,
     }),
     ...entryPoints.map(point => {
