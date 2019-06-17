@@ -1,3 +1,7 @@
+/**
+ * @module @axe/tips
+ */
+
 import styles from './index.css';
 
 interface Options {
@@ -8,14 +12,12 @@ interface Options {
   preventScroll?: boolean;
 }
 
-type Callback = () => void;
-
 export class Tips {
   private tipsNode: HTMLDivElement;
   private layerNode: HTMLDivElement;
   private bodyNode: HTMLDivElement;
   private preventScroll: boolean;
-  private callback: Callback | undefined;
+  private callback: (() => void) | undefined;
   private timerId: number | undefined;
 
   constructor(el: HTMLElement = document.body) {
@@ -66,7 +68,7 @@ export class Tips {
     }
   }
 
-  public show(options: Options | string, callback?: Callback): void {
+  public show(options: Options | string, callback?: () => void): void {
     if (typeof this.callback === 'function') {
       window.clearTimeout(this.timerId);
       this.callback();

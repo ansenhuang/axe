@@ -1,3 +1,7 @@
+/**
+ * @module @axe/precision
+ */
+
 export function getDecimalLength(num: number): number {
   const es = ('' + num).split('e');
   const len = (es[0].split('.')[1] || '').length - (+es[1] || 0);

@@ -82,6 +82,7 @@
     "tslint-loader": "^3.5.4",
     "tslint-plugin-prettier": "^2.0.1",
     "typedoc": "^0.14.2",
+    "typedoc-plugin-external-module-name": "^2.1.0",
     "typescript": "^3.5.2",
     "url-loader": "^2.0.0",
     "webpack": "^4.34.0",
