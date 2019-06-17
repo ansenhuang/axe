@@ -32,8 +32,11 @@
     "fix:test": "yarn lint:test --fix",
     "docs": "typedoc",
     "commit": "git-cz",
+    "predeploy": "yarn docs && yarn build:examples",
+    "deploy": "node scripts/deploy-website.js",
     "prerelease": "yarn test && yarn build",
-    "release": "lerna publish"
+    "release": "lerna publish",
+    "postrelease": "yarn deploy"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
