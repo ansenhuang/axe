@@ -1,6 +1,6 @@
 {
   "name": "@axe/precision",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Calculate float number of JavaScript precisely.",
   "author": "ansenhuang <ancheng1992@126.com>",
   "license": "MIT",
