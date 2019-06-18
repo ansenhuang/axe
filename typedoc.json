@@ -1,5 +1,5 @@
 {
-  "name": "@axe",
+  "name": "axe",
   "mode": "modules",
   "readme": "README.md",
   "out": "website/docs",

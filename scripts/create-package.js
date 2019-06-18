@@ -77,8 +77,8 @@ function createTsconfig(data, targetPath) {
 function createSource(data, targetPath) {
   const indexTs =
 `/**
-* @module @axe/${data.name}
-*/
+ * @module @axe/${data.name}
+ */
 
 export default {};
 `;
