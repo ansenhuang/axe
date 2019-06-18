@@ -37,7 +37,8 @@
     "deploy": "node scripts/deploy-website.js",
     "prerelease": "yarn test && yarn build",
     "release": "lerna publish",
-    "postrelease": "yarn deploy"
+    "postrelease": "yarn deploy",
+    "create-package": "node scripts/create-package.js"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
@@ -57,6 +58,7 @@
     "cz-lerna-changelog": "^2.0.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "inquirer": "^6.3.1",
     "jest": "^24.8.0",
     "lerna": "^3.15.0",
     "mini-css-extract-plugin": "^0.7.0",
