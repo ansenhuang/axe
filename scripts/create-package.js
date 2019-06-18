@@ -107,6 +107,10 @@ inquirer.prompt([
   }
 ]).then(answer => {
   const targetPath = path.join(__dirname, '../packages', answer.name);
+  if (fs.existsSync(targetPath)) {
+    console.log(`${answer.name} already exists!`);
+    return;
+  }
   fs.mkdirSync(targetPath);
   createPackage(answer, targetPath);
   createReadme(answer, targetPath);
