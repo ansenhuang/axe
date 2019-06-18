@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>页面导航</title>
+  <title>Axe Examples</title>
 </head>
 <body>
+  <h1>Axe Examples</h1>
   <ul>
     <% for (var i = 0; i < htmlWebpackPlugin.options.entryPoints.length; i++) { %>
       <li><a href="<%= htmlWebpackPlugin.options.publicPath %><%= htmlWebpackPlugin.options.entryPoints[i] %>.html"><%= htmlWebpackPlugin.options.entryPoints[i] %></a></li>

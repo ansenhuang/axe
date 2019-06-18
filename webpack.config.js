@@ -9,7 +9,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const isEnvProduction = process.env.NODE_ENV === 'production';
 const entryPoints = fs.readdirSync(path.resolve('examples'));
 const publicPath = isEnvProduction ? '/axe/examples/' : '/';
-const defaultHtml = path.resolve('templates/index.html');
+const defaultHtmlPath = path.resolve('templates/index.html');
+const iconPath = path.resolve('templates/favicon.ico');
 const htmlMinify = {
   removeComments: true,
   collapseWhitespace: true,
@@ -120,19 +121,21 @@ module.exports = {
         : 'static/css/[name].chunk.css',
     }),
     new HtmlWebpackPlugin({
-      inject: false,
-      template: path.resolve('templates/nav.html'),
+      inject: true,
+      template: path.resolve('templates/navigation.html'),
+      favicon: iconPath,
       filename: 'index.html',
-      chunks: false,
+      chunks: [],
       minify: isEnvProduction && htmlMinify,
       publicPath,
       entryPoints,
     }),
     ...entryPoints.map(point => {
-      const htmlFile = path.resolve('examples', point, 'index.html');
+      const htmlPath = path.resolve('examples', point, 'index.html');
       return new HtmlWebpackPlugin({
         inject: true,
-        template: fs.existsSync(htmlFile) ? htmlFile : defaultHtml,
+        template: fs.existsSync(htmlPath) ? htmlPath : defaultHtmlPath,
+        favicon: iconPath,
         filename: point + '.html',
         chunks: ['runtime', point],
         minify: isEnvProduction && htmlMinify,
