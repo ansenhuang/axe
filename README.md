@@ -1,4 +1,4 @@
-# [Axe](https://ansenhuang.github.io/axe/docs/) ![GitHub stars](https://img.shields.io/github/stars/ansenhuang/axe.svg?style=social)
+# [Axe ![GitHub stars](https://img.shields.io/github/stars/ansenhuang/axe.svg?style=social)](https://github.com/ansenhuang/axe)
 
 [![build status](https://img.shields.io/travis/ansenhuang/axe.svg)](https://travis-ci.org/ansenhuang/axe)
 [![code coverage](https://img.shields.io/codecov/c/github/ansenhuang/axe.svg)](https://codecov.io/gh/ansenhuang/axe)
