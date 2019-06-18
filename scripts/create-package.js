@@ -98,7 +98,15 @@ inquirer.prompt([
     type: 'input',
     name: 'name',
     message: 'Enter name(without @axe):',
-    validate: input => (input && input.trim()) ? true : 'Please enter name',
+    validate: input => {
+      if (!input) {
+        return 'Please enter name';
+      }
+      if (fs.existsSync(path.join(__dirname, '../packages', input))) {
+        return `${input} already exists!`;
+      }
+      return true;
+    }
   },
   {
     type: 'input',
@@ -107,10 +115,6 @@ inquirer.prompt([
   }
 ]).then(answer => {
   const targetPath = path.join(__dirname, '../packages', answer.name);
-  if (fs.existsSync(targetPath)) {
-    console.log(`${answer.name} already exists!`);
-    return;
-  }
   fs.mkdirSync(targetPath);
   createPackage(answer, targetPath);
   createReadme(answer, targetPath);
