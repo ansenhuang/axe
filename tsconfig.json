@@ -18,5 +18,5 @@
     "./definitions/index.d.ts"
   ],
   "include": ["packages/**/src", "examples"],
-  "exclude": ["node_modules", "**/lib"]
+  "exclude": ["node_modules", "**/lib", "**/unpkg"]
 }

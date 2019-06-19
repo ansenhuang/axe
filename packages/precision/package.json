@@ -7,13 +7,21 @@
   "main": "lib/index.cjs.js",
   "module": "lib/index.esm.js",
   "browser": "lib/index.umd.js",
-  "unpkg": "src/index.ts",
-  "typings": "typings/index.d.ts",
+  "unpkg": "unpkg/index.ts",
+  "typings": "unpkg/index.d.ts",
   "files": [
     "lib",
-    "src",
-    "typings"
+    "unpkg"
   ],
+  "keywords": [
+    "TypeScript",
+    "JavaScript",
+    "axe",
+    "precision"
+  ],
+  "scripts": {
+    "unpkg": "rimraf 'unpkg' && tsc"
+  },
   "homepage": "https://github.com/ansenhuang/axe/tree/master/packages/precision#readme",
   "repository": {
     "type": "git",

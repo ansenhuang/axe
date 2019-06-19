@@ -21,6 +21,6 @@
     "no-submodule-imports": false
   },
   "linterOptions": {
-    "exclude": ["node_modules", "**/*.test.ts", "**/*.d.ts", "**/lib/**/*", "**/*.css"]
+    "exclude": ["node_modules", "**/*.test.ts", "**/*.d.ts", "**/lib/**/*", "**/unpkg/**/*", "**/*.css"]
   }
 }

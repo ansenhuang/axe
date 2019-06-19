@@ -20,13 +20,21 @@ function createPackage(data, targetPath) {
     main: 'lib/index.cjs.js',
     module: 'lib/index.esm.js',
     browser: 'lib/index.umd.js',
-    unpkg: 'src/index.ts',
-    typings: 'typings/index.d.ts',
+    unpkg: 'unpkg/index.ts',
+    typings: 'unpkg/index.d.ts',
     files: [
       'lib',
-      'src',
-      'typings'
+      'unpkg',
     ],
+    keywords: [
+      'TypeScript',
+      'JavaScript',
+      'axe',
+      data.name,
+    ],
+    scripts: {
+      unpkg: `rimraf 'unpkg' && tsc${data.postcss ? ' && postcss src/**/*.css --base src --dir unpkg --env unpkg' : ''}`
+    },
     homepage: `https://github.com/ansenhuang/axe/tree/master/packages/${data.name}#readme`,
     repository: {
       type: 'git',
@@ -46,7 +54,7 @@ function createReadme(data, targetPath) {
 [![npm version](https://img.shields.io/npm/v/@axe/${data.name}.svg)](https://www.npmjs.org/package/@axe/${data.name})
 [![npm downloads](https://img.shields.io/npm/dt/@axe/${data.name}.svg)](http://npm-stat.com/charts.html?package=@axe/${data.name})
 [![examples](https://img.shields.io/badge/examples-🚀-yellow.svg)](https://ansenhuang.github.io/axe/examples/${data.name}.html)
-[![License](https://img.shields.io/npm/l/@axe/${data.name}.svg)](../../LICENSE)
+[![License](https://img.shields.io/npm/l/@axe/${data.name}.svg)](https://github.com/ansenhuang/axe/blob/master/LICENSE)
 
 ${data.description}
 
@@ -67,7 +75,7 @@ function createTsconfig(data, targetPath) {
     compilerOptions: {
       baseUrl: './',
       rootDir: './src',
-      declarationDir: './typings'
+      outDir: './unpkg'
     },
     include: ['./src']
   };
@@ -112,6 +120,12 @@ inquirer.prompt([
     type: 'input',
     name: 'description',
     message: 'Enter description:',
+  },
+  {
+    type: 'confirm',
+    name: 'postcss',
+    message: 'Use postcss?',
+    default: false,
   }
 ]).then(answer => {
   const targetPath = path.join(__dirname, '../packages', answer.name);

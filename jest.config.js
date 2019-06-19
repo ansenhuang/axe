@@ -15,7 +15,7 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['ts', 'js'],
-  modulePathIgnorePatterns: ['lib'],
+  modulePathIgnorePatterns: ['lib', 'unpkg'],
   moduleNameMapper: {
     '@axe/(.+)$': '<rootDir>packages/$1/src',
   },

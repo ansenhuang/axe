@@ -2,7 +2,6 @@ const fs = require('fs');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
@@ -106,7 +105,6 @@ module.exports = {
       fix: true,
       files: ['examples/**/*.css', 'packages/**/*.css'],
     }),
-    isEnvProduction && new CleanWebpackPlugin(),
     !isEnvProduction && new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {
         messages: ['Your application is running at http://localhost:5000/']

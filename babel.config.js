@@ -2,6 +2,7 @@ module.exports = {
   ignore: [
     'node_modules',
     'packages/**/lib',
+    'packages/**/unpkg',
   ],
   presets: [
     [

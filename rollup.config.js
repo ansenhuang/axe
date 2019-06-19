@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const clean = require('rollup-plugin-delete');
 const json = require('rollup-plugin-json');
 const postcss = require('rollup-plugin-postcss');
 const babel = require('rollup-plugin-babel');
@@ -25,9 +24,6 @@ export default entryPoints.map(point => {
       return id.indexOf('core-js') !== -1;
     },
     plugins: [
-      clean({
-        targets: path.join(baseDir, 'lib/*'),
-      }),
       json(),
       postcss({
         extensions: ['.css'],
