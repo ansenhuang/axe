@@ -1,5 +1,6 @@
 module.exports = {
   clearMocks: true,
+  verbose: true,
   coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {

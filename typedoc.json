@@ -4,7 +4,7 @@
   "readme": "README.md",
   "out": "website/docs",
   "excludeExternals": true,
-  "excludeNotExported": false,
+  "excludeNotExported": true,
   "excludePrivate": true,
   "includeDeclarations": false,
   "exclude": ["examples/**/*", "**/*.test.ts"],

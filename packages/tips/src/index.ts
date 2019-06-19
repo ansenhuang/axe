@@ -1,10 +1,14 @@
 /**
+ * A pretty tips ui without any dependencies.
  * @module @axe/tips
- */
+ *//** */
 
 import styles from './index.css';
 
-interface Options {
+/**
+ * options of `tips.show`
+ */
+export interface Options {
   zIndex?: number;
   content?: string;
   contentHtml?: string;
@@ -12,6 +16,9 @@ interface Options {
   preventScroll?: boolean;
 }
 
+/**
+ * class Tips
+ */
 export class Tips {
   private tipsNode: HTMLDivElement;
   private layerNode: HTMLDivElement;
@@ -62,12 +69,19 @@ export class Tips {
     el.appendChild(this.tipsNode);
   }
 
+  /**
+   * adjust the size of tips,
+   * it will adjust automatically based on client width by default
+   */
   public setScale(scale?: number): void {
     if (scale) {
       this.tipsNode.style.fontSize = 28 * scale + 'px';
     }
   }
 
+  /**
+   * show tips with options
+   */
   public show(options: Options | string, callback?: () => void): void {
     if (typeof this.callback === 'function') {
       window.clearTimeout(this.timerId);
@@ -99,9 +113,16 @@ export class Tips {
     }, options.duration || 2000);
   }
 
+  /**
+   * hide tips
+   */
   public hide(): void {
     this.tipsNode.style.display = 'none';
   }
 }
 
-export default new Tips();
+/**
+ * tips instance
+ */
+export const tips = new Tips();
+export default tips;

@@ -30,7 +30,7 @@
     "fix:css": "yarn lint:css --fix",
     "fix:lib": "yarn lint:lib --fix",
     "fix:test": "yarn lint:test --fix",
-    "docs": "typedoc",
+    "docs": "typedoc --logger none",
     "commit": "git-cz",
     "codecov": "codecov",
     "predeploy": "yarn docs && yarn build:examples",

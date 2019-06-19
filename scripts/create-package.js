@@ -85,8 +85,10 @@ function createTsconfig(data, targetPath) {
 function createSource(data, targetPath) {
   const indexTs =
 `/**
+ * ${data.description}
  * @module @axe/${data.name}
- */
+ * comments must be added before `@module`
+ *//** */
 
 export default {};
 `;

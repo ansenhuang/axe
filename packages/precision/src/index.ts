@@ -1,13 +1,28 @@
 /**
+ * Calculate float number of JavaScript precisely.
  * @module @axe/precision
- */
+ *//** */
 
+function checkBoundary(num: number): void {
+  if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
+    console.warn(
+      `${num} is beyond boundary when transfer to integer, the results may not be accurate!`,
+    );
+  }
+}
+
+/**
+ * Get length of decimal number
+ */
 export function getDecimalLength(num: number): number {
   const es = ('' + num).split('e');
   const len = (es[0].split('.')[1] || '').length - (+es[1] || 0);
   return len > 0 ? len : 0;
 }
 
+/**
+ * Transform decimal number to integer
+ */
 export function float2Int(num: number): number {
   const numStr = '' + num;
   if (numStr.indexOf('e') === -1) {
@@ -16,17 +31,10 @@ export function float2Int(num: number): number {
   return num * Math.pow(10, getDecimalLength(num));
 }
 
-export function checkBoundary(num: number): boolean {
-  if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-    console.warn(
-      `${num} is beyond boundary when transfer to integer, the results may not be accurate!`,
-    );
-    return true;
-  }
-  return false;
-}
-
-function times(n1: number, n2: number, ...others: number[]): number {
+/**
+ * precise times
+ */
+export function times(n1: number, n2: number, ...others: number[]): number {
   if (others.length > 0) {
     return times(times(n1, n2), others[0], ...others.slice(1));
   }
@@ -35,7 +43,10 @@ function times(n1: number, n2: number, ...others: number[]): number {
   return value / Math.pow(10, getDecimalLength(n1) + getDecimalLength(n2));
 }
 
-function divide(n1: number, n2: number, ...others: number[]): number {
+/**
+ * precise divide
+ */
+export function divide(n1: number, n2: number, ...others: number[]): number {
   if (others.length > 0) {
     return divide(divide(n1, n2), others[0], ...others.slice(1));
   }
@@ -49,7 +60,10 @@ function divide(n1: number, n2: number, ...others: number[]): number {
   );
 }
 
-function plus(n1: number, n2: number, ...others: number[]): number {
+/**
+ * precise plus
+ */
+export function plus(n1: number, n2: number, ...others: number[]): number {
   if (others.length > 0) {
     return plus(plus(n1, n2), others[0], ...others.slice(1));
   }
@@ -60,7 +74,10 @@ function plus(n1: number, n2: number, ...others: number[]): number {
   return (times(n1, baseNum) + times(n2, baseNum)) / baseNum;
 }
 
-function minus(n1: number, n2: number, ...others: number[]): number {
+/**
+ * precise minus
+ */
+export function minus(n1: number, n2: number, ...others: number[]): number {
   if (others.length > 0) {
     return minus(minus(n1, n2), others[0], ...others.slice(1));
   }
@@ -71,18 +88,13 @@ function minus(n1: number, n2: number, ...others: number[]): number {
   return (times(n1, baseNum) - times(n2, baseNum)) / baseNum;
 }
 
-function round(n: number, precision: number = 0): number {
+/**
+ * precise round
+ */
+export function round(n: number, precision: number = 0): number {
   if (precision <= 0) {
     return Math.round(n);
   }
   const baseNum = Math.pow(10, precision);
   return divide(Math.round(times(n, baseNum)), baseNum);
 }
-
-export default {
-  times,
-  divide,
-  plus,
-  minus,
-  round,
-};
