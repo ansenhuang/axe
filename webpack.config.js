@@ -7,7 +7,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isEnvProduction = process.env.NODE_ENV === 'production';
 const entryPoints = fs.readdirSync(path.resolve('examples'));
-const publicPath = isEnvProduction ? '/axe/examples/' : '/';
+const publicPath = isEnvProduction ? '' : '/';
 const defaultHtmlPath = path.resolve('templates/index.html');
 const iconPath = path.resolve('templates/favicon.ico');
 const htmlMinify = {
