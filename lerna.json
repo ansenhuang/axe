@@ -10,7 +10,7 @@
       "conventionalCommits": true,
       "access": "public",
       "npmClient": "yarn",
-      "allowBranch": ["master", "develop"]
+      "allowBranch": ["master"]
     }
   }
 }
