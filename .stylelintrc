@@ -2,5 +2,7 @@
   "extends": [
     "stylelint-config-standard"
   ],
-  "ignoreFiles": ["node_modules", "**/lib/**/*", "**/unpkg/**/*"]
+  "ignoreFiles": [
+    "node_modules"
+  ]
 }

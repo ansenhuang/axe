@@ -33,7 +33,9 @@ function createPackage(data, targetPath) {
       data.name,
     ],
     scripts: {
-      unpkg: `rimraf 'unpkg' && tsc --build tsconfig.lib.json${data.postcss ? ' && postcss src/**/*.css --base src --dir unpkg --env unpkg' : ''}`
+      "build": "node ../../scripts/build.js",
+      "lint": "node ../../scripts/lint.js",
+      "lint:fix": "node ../../scripts/lint.js --fix"
     },
     homepage: `https://github.com/ansenhuang/axe/tree/master/packages/${data.name}#readme`,
     repository: {
@@ -71,15 +73,19 @@ ${data.description}
 
 function createTsconfig(data, targetPath) {
   const json = {
-    extends: '../../tsconfig.lib.json',
+    extends: '../../tsconfig.json',
     compilerOptions: {
+      noEmit: false,
+      declaration: true,
       baseUrl: './',
       rootDir: './src',
       outDir: './unpkg'
     },
-    include: ['./src']
+    include: [
+      './src'
+    ]
   };
-  writeFile(path.join(targetPath, 'tsconfig.lib.json'), JSON.stringify(json, null, 2));
+  writeFile(path.join(targetPath, 'tsconfig.json'), JSON.stringify(json, null, 2));
 }
 
 function createSource(data, targetPath) {
@@ -87,20 +93,11 @@ function createSource(data, targetPath) {
 `/**
  * ${data.description}
  * @module @axe/${data.name}
- * comments must be added before `@module`
  */ /** */
 
 export default {};
 `;
-  const indexTestTs =
-`describe('Please add your own test!', () => {
-  test('test', () => {
-    expect(1 + 1).toBe(2);
-  });
-});
-`;
   writeFile(path.join(targetPath, 'src/index.ts'), indexTs);
-  writeFile(path.join(targetPath, 'src/index.test.ts'), indexTestTs);
 }
 
 inquirer.prompt([
@@ -123,12 +120,6 @@ inquirer.prompt([
     name: 'description',
     message: 'Enter description:',
   },
-  {
-    type: 'confirm',
-    name: 'postcss',
-    message: 'Use postcss?',
-    default: false,
-  }
 ]).then(answer => {
   const targetPath = path.join(__dirname, '../packages', answer.name);
   fs.mkdirSync(targetPath);

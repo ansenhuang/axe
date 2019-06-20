@@ -1,6 +1,6 @@
 module.exports = {
-  clearMocks: true,
   verbose: true,
+  clearMocks: true,
   coverageDirectory: 'coverage',
   coverageThreshold: {
     global: {
@@ -16,14 +16,12 @@ module.exports = {
     },
   },
   moduleFileExtensions: ['ts', 'js'],
-  modulePathIgnorePatterns: ['lib', 'unpkg'],
+  modulePathIgnorePatterns: [],
   moduleNameMapper: {
     '@axe/(.+)$': '<rootDir>packages/$1/src',
   },
-  notify: false,
-  notifyMode: 'always',
-  roots: ['<rootDir>packages'],
-  testMatch: ['**/__tests__/*.+(ts|js)', '**/*.test.+(ts|js)'],
+  roots: ['<rootDir>tests'],
+  testMatch: ['**/*.test.ts'],
   transform: {
     '^.+\\.ts$': 'ts-jest',
   },

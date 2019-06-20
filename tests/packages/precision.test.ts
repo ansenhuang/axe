@@ -4,9 +4,8 @@ import {
   getDecimalLength,
   minus,
   plus,
-  round,
   times,
-} from './index';
+} from '@axe/precision';
 
 describe('precision plus', () => {
   test('0.1 + 0.2', () => {
@@ -61,20 +60,6 @@ describe('precision divide', () => {
 
   test('0.06 */ 0.2 / 0.1', () => {
     expect(divide(0.06, 0.2, 0.1)).toBe(3);
-  });
-});
-
-describe('precision round', () => {
-  test('5.15 + 0.003', () => {
-    expect(round(5.15 + 0.003)).toBe(5);
-  });
-
-  test('5.15 + 0.503', () => {
-    expect(round(5.15 + 0.503)).toBe(6);
-  });
-
-  test('5.15 + 0.503 with precision 3', () => {
-    expect(round(plus(5.15, 0.503), 3)).toBe(5.653);
   });
 });
 

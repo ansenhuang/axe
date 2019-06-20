@@ -87,14 +87,3 @@ export function minus(n1: number, n2: number, ...others: number[]): number {
   );
   return (times(n1, baseNum) - times(n2, baseNum)) / baseNum;
 }
-
-/**
- * precise round
- */
-export function round(n: number, precision: number = 0): number {
-  if (precision <= 0) {
-    return Math.round(n);
-  }
-  const baseNum = Math.pow(10, precision);
-  return divide(Math.round(times(n, baseNum)), baseNum);
-}

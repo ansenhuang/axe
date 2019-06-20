@@ -7,7 +7,10 @@
   "excludeNotExported": true,
   "excludePrivate": true,
   "includeDeclarations": false,
-  "exclude": ["examples/**/*", "**/*.test.ts"],
+  "exclude": [
+    "examples/**/*",
+    "tests/**/*"
+  ],
   "plugin": [
     "typedoc-plugin-external-module-name"
   ]

@@ -7,6 +7,7 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isEnvProduction = process.env.NODE_ENV === 'production';
 const entryPoints = fs.readdirSync(path.resolve('examples'));
+const axePoints = fs.readdirSync(path.resolve('packages'));
 const publicPath = isEnvProduction ? '' : '/';
 const defaultHtmlPath = path.resolve('templates/index.html');
 const iconPath = path.resolve('templates/favicon.ico');
@@ -48,10 +49,10 @@ module.exports = {
       path.resolve('node_modules'),
     ],
     extensions: ['.ts', '.js'],
-    mainFields: isEnvProduction ? ['module', 'main'] : ['unpkg', 'module', 'main'],
-    alias: {
-      '@axe': path.resolve('packages'),
-    },
+    alias: axePoints.reduce((obj, name) => {
+      obj['@axe/' + name] = path.resolve('packages', name, 'src/index.ts');
+      return obj;
+    }, {}),
   },
   module: {
     rules: [
@@ -103,7 +104,7 @@ module.exports = {
   plugins: [
     new StyleLintPlugin({
       fix: true,
-      files: ['examples/**/*.css', 'packages/**/*.css'],
+      files: ['examples/**/*.css', '**/src/**/*.css'],
     }),
     !isEnvProduction && new FriendlyErrorsWebpackPlugin({
       compilationSuccessInfo: {

@@ -21,6 +21,9 @@
   "files": [
     "./definitions/index.d.ts"
   ],
-  "include": ["packages/**/src", "examples"],
-  "exclude": ["node_modules", "**/lib", "**/unpkg"]
+  "include": [
+    "packages/**/src",
+    "tests",
+    "examples"
+  ]
 }
