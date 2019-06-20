@@ -20,7 +20,7 @@
     "tips"
   ],
   "scripts": {
-    "unpkg": "rimraf 'unpkg' && tsc && postcss src/**/*.css --base src --dir unpkg --env unpkg"
+    "unpkg": "rimraf 'unpkg' && tsc --build tsconfig.lib.json && postcss src/**/*.css --base src --dir unpkg --env unpkg"
   },
   "homepage": "https://github.com/ansenhuang/axe/tree/master/packages/tips#readme",
   "repository": {

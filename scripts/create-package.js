@@ -33,7 +33,7 @@ function createPackage(data, targetPath) {
       data.name,
     ],
     scripts: {
-      unpkg: `rimraf 'unpkg' && tsc${data.postcss ? ' && postcss src/**/*.css --base src --dir unpkg --env unpkg' : ''}`
+      unpkg: `rimraf 'unpkg' && tsc --build tsconfig.lib.json${data.postcss ? ' && postcss src/**/*.css --base src --dir unpkg --env unpkg' : ''}`
     },
     homepage: `https://github.com/ansenhuang/axe/tree/master/packages/${data.name}#readme`,
     repository: {
@@ -79,7 +79,7 @@ function createTsconfig(data, targetPath) {
     },
     include: ['./src']
   };
-  writeFile(path.join(targetPath, 'tsconfig.json'), JSON.stringify(json, null, 2));
+  writeFile(path.join(targetPath, 'tsconfig.lib.json'), JSON.stringify(json, null, 2));
 }
 
 function createSource(data, targetPath) {

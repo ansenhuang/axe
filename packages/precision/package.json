@@ -20,7 +20,7 @@
     "precision"
   ],
   "scripts": {
-    "unpkg": "rimraf 'unpkg' && tsc"
+    "unpkg": "rimraf 'unpkg' && tsc --build tsconfig.lib.json"
   },
   "homepage": "https://github.com/ansenhuang/axe/tree/master/packages/precision#readme",
   "repository": {
