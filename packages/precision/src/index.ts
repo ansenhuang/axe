@@ -1,7 +1,7 @@
 /**
  * Calculate float number of JavaScript precisely.
  * @module @axe/precision
- *//** */
+ */ /** */
 
 function checkBoundary(num: number): void {
   if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {

@@ -1,7 +1,7 @@
 /**
  * A pretty tips ui without any dependencies.
  * @module @axe/tips
- *//** */
+ */ /** */
 
 import styles from './index.css';
 

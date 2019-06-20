@@ -88,7 +88,7 @@ function createSource(data, targetPath) {
  * ${data.description}
  * @module @axe/${data.name}
  * comments must be added before `@module`
- *//** */
+ */ /** */
 
 export default {};
 `;
