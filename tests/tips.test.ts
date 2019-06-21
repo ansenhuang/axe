@@ -1,5 +1,7 @@
+import tips from '@axe/tips';
+
 describe('Please add your own test!', () => {
   test('test', () => {
-    expect(1 + 1).toBe(2);
+    expect(typeof tips.show).toBe('function');
   });
 });

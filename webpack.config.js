@@ -9,8 +9,8 @@ const isEnvProduction = process.env.NODE_ENV === 'production';
 const entryPoints = fs.readdirSync(path.resolve('examples'));
 const axePoints = fs.readdirSync(path.resolve('packages'));
 const publicPath = isEnvProduction ? '' : '/';
-const defaultHtmlPath = path.resolve('templates/index.html');
-const iconPath = path.resolve('templates/favicon.ico');
+const defaultHtmlPath = path.resolve('config/templates/index.html');
+const iconPath = path.resolve('config/templates/favicon.ico');
 const htmlMinify = {
   removeComments: true,
   collapseWhitespace: true,
@@ -121,7 +121,7 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: path.resolve('templates/navigation.html'),
+      template: path.resolve('config/templates/navigation.html'),
       favicon: iconPath,
       filename: 'index.html',
       chunks: [],

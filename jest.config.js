@@ -24,5 +24,7 @@ module.exports = {
   testMatch: ['**/*.test.ts'],
   transform: {
     '^.+\\.ts$': 'ts-jest',
+    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
+    "^(?!.*\\.(ts|js|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
   },
 };

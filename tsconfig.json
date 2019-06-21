@@ -19,7 +19,7 @@
     }
   },
   "files": [
-    "./definitions/index.d.ts"
+    "./config/definitions/index.d.ts"
   ],
   "include": [
     "packages/**/src",
