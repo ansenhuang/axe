@@ -1,5 +1,4 @@
 module.exports = {
-  verbose: true,
   clearMocks: true,
   coverageDirectory: 'coverage',
   coverageThreshold: {
@@ -15,16 +14,16 @@ module.exports = {
       extends: './babel.config.js',
     },
   },
+  roots: ['<rootDir>tests'],
+  testMatch: ['**/*.test.ts'],
   moduleFileExtensions: ['ts', 'js'],
   modulePathIgnorePatterns: [],
   moduleNameMapper: {
     '@axe/(.+)$': '<rootDir>packages/$1/src',
+    '\\.css$': '<rootDir>/config/jest/cssMapper.js',
   },
-  roots: ['<rootDir>tests'],
-  testMatch: ['**/*.test.ts'],
   transform: {
     '^.+\\.ts$': 'ts-jest',
-    "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
     "^(?!.*\\.(ts|js|css|json)$)": "<rootDir>/config/jest/fileTransform.js"
   },
 };
