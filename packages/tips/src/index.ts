@@ -49,13 +49,19 @@ export class Tips {
     // prevent default scroll
     this.tipsNode.addEventListener(
       'touchmove',
-      (e: Event) => {
+      (e: TouchEvent) => {
         if (!this.preventScroll) {
           return;
         }
 
-        const data = (e.target as HTMLElement).dataset || {};
-        if (typeof data.scroll === 'undefined') {
+        let target: HTMLElement = e.target as HTMLElement;
+        while (
+          target !== this.tipsNode &&
+          typeof target.dataset.scroll === 'undefined'
+        ) {
+          target = target.parentElement as HTMLElement;
+        }
+        if (target === this.tipsNode) {
           e.preventDefault();
         }
       },
