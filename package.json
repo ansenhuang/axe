@@ -28,9 +28,11 @@
     "codecov": "codecov",
     "docs": "typedoc --logger none",
     "predeploy": "yarn docs && yarn build:examples",
-    "deploy": "node scripts/deploy-website.js",
-    "release": "node scripts/release.js",
-    "create-package": "node scripts/create-package.js"
+    "deploy": "node scripts/deploy.js",
+    "prerelease": "node scripts/merge.js && yarn test && yarn build",
+    "release": "lerna publish",
+    "postrelease": "yarn deploy",
+    "create-pkg": "node scripts/create.js"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
