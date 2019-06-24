@@ -1,7 +1,7 @@
 import tips from '@axe/tips';
 
 describe('initial instance of tips', () => {
-  const tipsEl = <HTMLElement>document.body.querySelector('.tips');
+  const tipsEl = document.body.querySelector('.tips') as HTMLElement;
 
   test('tips should inject to body', () => {
     expect(tipsEl).toBeInstanceOf(HTMLDivElement);
@@ -18,7 +18,7 @@ describe('initial instance of tips', () => {
     tips.show({ content, duration }, callback);
 
     expect(tipsEl.style.display).not.toBe('none');
-    expect((<HTMLElement>tipsEl.querySelector('.body')).textContent).toBe(content);
+    expect((tipsEl.querySelector('.body') as HTMLElement).textContent).toBe(content);
     setTimeout(() => {
       expect(callback).toBeCalled();
       expect(tipsEl.style.display).toBe('none');

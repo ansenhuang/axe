@@ -5,9 +5,7 @@
 
 function checkBoundary(num: number): void {
   if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
-    console.warn(
-      `${num} is beyond boundary when transfer to integer, the results may not be accurate!`,
-    );
+    console.warn(`${num} is beyond boundary when transfer to integer, the results may not be accurate!`);
   }
 }
 
@@ -54,10 +52,7 @@ export function divide(n1: number, n2: number, ...others: number[]): number {
   const n2Int = float2Int(n2);
   checkBoundary(n1Int);
   checkBoundary(n2Int);
-  return times(
-    n1Int / n2Int,
-    Math.pow(10, getDecimalLength(n2) - getDecimalLength(n1)),
-  );
+  return times(n1Int / n2Int, Math.pow(10, getDecimalLength(n2) - getDecimalLength(n1)));
 }
 
 /**
@@ -67,10 +62,7 @@ export function plus(n1: number, n2: number, ...others: number[]): number {
   if (others.length > 0) {
     return plus(plus(n1, n2), others[0], ...others.slice(1));
   }
-  const baseNum = Math.pow(
-    10,
-    Math.max(getDecimalLength(n1), getDecimalLength(n2)),
-  );
+  const baseNum = Math.pow(10, Math.max(getDecimalLength(n1), getDecimalLength(n2)));
   return (times(n1, baseNum) + times(n2, baseNum)) / baseNum;
 }
 
@@ -81,9 +73,6 @@ export function minus(n1: number, n2: number, ...others: number[]): number {
   if (others.length > 0) {
     return minus(minus(n1, n2), others[0], ...others.slice(1));
   }
-  const baseNum = Math.pow(
-    10,
-    Math.max(getDecimalLength(n1), getDecimalLength(n2)),
-  );
+  const baseNum = Math.pow(10, Math.max(getDecimalLength(n1), getDecimalLength(n2)));
   return (times(n1, baseNum) - times(n2, baseNum)) / baseNum;
 }

@@ -1,11 +1,4 @@
-import {
-  divide,
-  float2Int,
-  getDecimalLength,
-  minus,
-  plus,
-  times,
-} from '@axe/precision';
+import { divide, float2Int, getDecimalLength, minus, plus, times } from '@axe/precision';
 
 describe('precision plus', () => {
   test('0.1 + 0.2', () => {

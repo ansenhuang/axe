@@ -55,10 +55,7 @@ export class Tips {
         }
 
         let target: HTMLElement = e.target as HTMLElement;
-        while (
-          target !== this.tipsNode &&
-          typeof target.dataset.scroll === 'undefined'
-        ) {
+        while (target !== this.tipsNode && typeof target.dataset.scroll === 'undefined') {
           target = target.parentElement as HTMLElement;
         }
         if (target === this.tipsNode) {
@@ -99,8 +96,7 @@ export class Tips {
       options = { content: options };
     }
 
-    this.tipsNode.style.zIndex =
-      typeof options.zIndex === 'number' ? '' + options.zIndex : null;
+    this.tipsNode.style.zIndex = typeof options.zIndex === 'number' ? '' + options.zIndex : null;
     this.preventScroll = options.preventScroll !== false;
     if (!options.contentHtml) {
       this.bodyNode.textContent = options.content || '';
