@@ -29,9 +29,7 @@
     "docs": "typedoc --logger none",
     "predeploy": "yarn docs && yarn build:examples",
     "deploy": "node scripts/deploy-website.js",
-    "prerelease": "yarn test && yarn build",
-    "release": "lerna publish",
-    "postrelease": "yarn deploy",
+    "release": "node scripts/release.js",
     "create-package": "node scripts/create-package.js"
   },
   "resolutions": {
