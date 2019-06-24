@@ -1,3 +1,101 @@
+.tips--3GZNi {
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer--wzTGJ {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: transparent;
+}
+
+.body--2AXgM {
+  min-width: 8.58em;
+  max-width: 72%;
+  padding: 0.7em;
+  font-size: 1em;
+  color: #fff;
+  line-height: 1.5;
+  text-align: center;
+  word-wrap: break-word;
+  border-radius: 0.3em;
+  background-color: rgba(0, 0, 0, 0.7);
+  -webkit-animation: tipsBounceEnter--380zZ 0.75s ease;
+          animation: tipsBounceEnter--380zZ 0.75s ease;
+}
+
+@-webkit-keyframes tipsBounceEnter--380zZ {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes tipsBounceEnter--380zZ {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
 .button--2c6vT {
   outline: 0;
   display: block;
@@ -69,4 +167,4 @@
 }
 
 
-/*# sourceMappingURL=tips.ec2b0d78.chunk.css.map*/
+/*# sourceMappingURL=tips.0fb7c637.chunk.css.map*/
