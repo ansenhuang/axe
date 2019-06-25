@@ -1,4 +1,4 @@
-import { divide, float2Int, getDecimalLength, minus, plus, times } from '@axe/precision';
+import { divide, float2Int, getDecimalLength, hasOutBoundary, minus, plus, times } from '@axe/precision';
 
 describe('precision plus', () => {
   test('0.1 + 0.2', () => {
@@ -93,5 +93,16 @@ describe('float2Int', () => {
 
   test('5 * Math.pow(10, -10)', () => {
     expect(float2Int(5 * Math.pow(10, -10))).toBe(5);
+  });
+});
+
+describe('check safe number', () => {
+  test('safe number', () => {
+    expect(hasOutBoundary(1)).toBeFalsy();
+  });
+
+  test('unsafe number', () => {
+    expect(hasOutBoundary(Number.MAX_SAFE_INTEGER + 1)).toBeTruthy();
+    expect(hasOutBoundary(Number.MIN_SAFE_INTEGER - 1)).toBeTruthy();
   });
 });
