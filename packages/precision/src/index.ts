@@ -2,11 +2,15 @@
  * Calculate float number of JavaScript precisely.
  * @module @axe/precision
  */ /** */
-
-function checkBoundary(num: number): void {
+/**
+ * Check if input number is safe
+ */
+export function hasOutBoundary(num: number): boolean {
   if (num > Number.MAX_SAFE_INTEGER || num < Number.MIN_SAFE_INTEGER) {
     console.warn(`${num} is beyond boundary when transfer to integer, the results may not be accurate!`);
+    return true;
   }
+  return false;
 }
 
 /**
@@ -37,7 +41,7 @@ export function times(n1: number, n2: number, ...others: number[]): number {
     return times(times(n1, n2), others[0], ...others.slice(1));
   }
   const value = float2Int(n1) * float2Int(n2);
-  checkBoundary(value);
+  hasOutBoundary(value);
   return value / Math.pow(10, getDecimalLength(n1) + getDecimalLength(n2));
 }
 
@@ -50,8 +54,8 @@ export function divide(n1: number, n2: number, ...others: number[]): number {
   }
   const n1Int = float2Int(n1);
   const n2Int = float2Int(n2);
-  checkBoundary(n1Int);
-  checkBoundary(n2Int);
+  hasOutBoundary(n1Int);
+  hasOutBoundary(n2Int);
   return times(n1Int / n2Int, Math.pow(10, getDecimalLength(n2) - getDecimalLength(n1)));
 }
 
