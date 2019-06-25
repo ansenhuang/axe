@@ -61,7 +61,9 @@ module.exports = {
         enforce: 'pre',
         loader: 'tslint-loader',
         options: {
-          fix: true,
+          fix: !isEnvProduction,
+          emitErrors: false,
+          formatter: 'stylish',
         }
       },
       {
@@ -103,7 +105,8 @@ module.exports = {
   },
   plugins: [
     new StyleLintPlugin({
-      fix: true,
+      fix: !isEnvProduction,
+      emitErrors: false,
       files: ['examples/**/*.css', '**/src/**/*.css'],
     }),
     !isEnvProduction && new FriendlyErrorsWebpackPlugin({

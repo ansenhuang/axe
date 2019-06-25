@@ -4,12 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Axe Examples</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;
+    }
+    h1 {
+      margin: 0;
+      padding: .5em 1em;
+      font-size: 1.5em;
+      border-bottom: 1px solid #eaecef;
+    }
+    ul {
+      margin: 1em 0;
+    }
+    ul li {
+      padding: .3em 0;
+    }
+    a {
+      color: #0366d6;
+    }
+  </style>
 </head>
 <body>
   <h1>Axe Examples</h1>
   <ul>
     <% for (var i = 0; i < htmlWebpackPlugin.options.entryPoints.length; i++) { %>
-      <li><a href="<%= htmlWebpackPlugin.options.publicPath %><%= htmlWebpackPlugin.options.entryPoints[i] %>.html"><%= htmlWebpackPlugin.options.entryPoints[i] %></a></li>
+      <li><a href="<%= htmlWebpackPlugin.options.publicPath %><%= htmlWebpackPlugin.options.entryPoints[i] %>.html">@axe/<%= htmlWebpackPlugin.options.entryPoints[i] %></a></li>
     <% } %>
   </ul>
 </body>
