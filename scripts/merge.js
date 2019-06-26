@@ -14,10 +14,13 @@ if (currentBranch === 'master') {
 }
 
 // 合并代码到master
-spawnSync('git', ['push'], { stdio: 'inherit' });
+spawnSync('git', ['push'], { stdio: 'ignore' });
 spawnSync('git', ['checkout', 'master'], { stdio: 'ignore' });
 spawnSync('git', ['pull'], { stdio: 'ignore' });
 spawnSync('git', ['merge', '--no-ff', currentBranch, '--message', `merge: ${currentBranch} was automatically merged`], { stdio: 'ignore' });
-spawnSync('git', ['push'], { stdio: 'inherit' });
+const pushResults = spawnSync('git', ['push'], { stdio: 'ignore' });
 
-console.log('\nMerge done!!!');
+if (pushResults.status !== 0) {
+  process.exit(1);
+  console.log('\nMerge failed!!!');
+}
