@@ -6,6 +6,9 @@
   "useWorkspaces": true,
   "npmClient": "yarn",
   "command": {
+    "version": {
+      "message": "build: publish"
+    },
     "publish": {
       "conventionalCommits": true,
       "access": "public",
