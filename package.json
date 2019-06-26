@@ -15,24 +15,16 @@
   "scripts": {
     "start": "webpack-dev-server --progress",
     "build:examples": "rimraf website/examples && NODE_ENV=production webpack --progress",
-    "prebuild": "yarn lint:lib",
-    "build": "lerna run build",
-    "pretest": "yarn lint:test",
+    "build:packages": "lerna run build",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "lint:test": "tslint tests/**/*.ts --format stylish",
-    "lint:test-fix": "tslint tests/**/*.ts --fix",
-    "lint:lib": "lerna run lint",
-    "lint:lib-fix": "lerna run lint:fix",
     "commit": "git-cz",
-    "codecov": "codecov",
     "docs": "typedoc --logger none",
-    "predeploy": "yarn docs && yarn build:examples",
-    "deploy": "node scripts/deploy.js",
-    "prerelease": "node scripts/merge.js && yarn test && yarn build",
+    "deploy": "yarn docs && yarn build:examples && node scripts/deploy.js",
+    "prerelease": "yarn test && yarn build:packages && node scripts/merge.js",
     "release": "lerna publish",
     "postrelease": "yarn deploy",
-    "create-pkg": "node scripts/create.js"
+    "create-package": "node scripts/create.js"
   },
   "resolutions": {
     "babel-core": "^7.0.0-bridge.0"
@@ -41,10 +33,12 @@
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-typescript": "^7.3.3",
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@commitlint/config-lerna-scopes": "^8.0.0",
     "@types/jest": "^24.0.14",
     "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^8.0.6",
-    "codecov": "^3.5.0",
     "commitizen": "^3.1.1",
     "core-js": "3",
     "css-loader": "^3.0.0",
@@ -52,9 +46,11 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "glob": "^7.1.4",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.4.1",
     "inquirer": "^6.3.1",
     "jest": "^24.8.0",
     "lerna": "^3.15.0",
+    "lint-staged": "^8.2.1",
     "mini-css-extract-plugin": "^0.7.0",
     "postcss-advanced-variables": "^3.0.0",
     "postcss-calc": "^7.0.1",
@@ -73,7 +69,9 @@
     "rollup-plugin-postcss": "^2.0.3",
     "semantic-release": "^15.13.16",
     "stylelint": "^10.1.0",
+    "stylelint-config-prettier": "^5.2.0",
     "stylelint-config-standard": "^18.3.0",
+    "stylelint-prettier": "^1.1.1",
     "stylelint-webpack-plugin": "^0.10.5",
     "ts-jest": "^24.0.2",
     "tslint": "^5.17.0",
@@ -88,9 +86,35 @@
     "webpack-cli": "^3.3.4",
     "webpack-dev-server": "^3.7.1"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "{examples,packages}/**/*.ts": [
+      "tslint --fix",
+      "git add"
+    ],
+    "{examples,packages}/**/*.css": [
+      "stylelint --fix",
+      "git add"
+    ],
+    "tests/**/*.test.ts": [
+      "tslint --fix",
+      "git add"
+    ]
+  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional",
+      "@commitlint/config-lerna-scopes"
+    ]
   }
 }

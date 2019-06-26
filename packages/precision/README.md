@@ -2,8 +2,8 @@
 
 [![npm version](https://img.shields.io/npm/v/@axe/precision.svg)](https://www.npmjs.org/package/@axe/precision)
 [![npm downloads](https://img.shields.io/npm/dt/@axe/precision.svg)](http://npm-stat.com/charts.html?package=@axe/precision)
-[![examples](https://img.shields.io/badge/examples-🚀-yellow.svg)](https://ansenhuang.github.io/axe/examples/precision.html)
 [![License](https://img.shields.io/npm/l/@axe/precision.svg)](https://github.com/ansenhuang/axe/blob/master/LICENSE)
+[![examples](https://img.shields.io/badge/examples-🚀-yellow.svg)](https://ansenhuang.github.io/axe/examples/precision.html)
 
 Calculate float number of JavaScript precisely.
 
