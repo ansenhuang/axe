@@ -7,7 +7,7 @@
   "npmClient": "yarn",
   "command": {
     "version": {
-      "message": "build: publish"
+      "message": "ci: publish by lerna"
     },
     "publish": {
       "conventionalCommits": true,

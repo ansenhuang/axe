@@ -17,7 +17,7 @@ if (currentBranch === 'master') {
 spawnSync('git', ['push'], { stdio: 'ignore' });
 spawnSync('git', ['checkout', 'master'], { stdio: 'ignore' });
 spawnSync('git', ['pull'], { stdio: 'ignore' });
-spawnSync('git', ['merge', '--no-ff', currentBranch, '--message', `merge: ${currentBranch} was automatically merged`], { stdio: 'ignore' });
+spawnSync('git', ['merge', '--no-ff', currentBranch, '--message', `ci: merge from ${currentBranch}`], { stdio: 'ignore' });
 const pushResults = spawnSync('git', ['push'], { stdio: 'ignore' });
 
 if (pushResults.status !== 0) {
