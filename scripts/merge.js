@@ -14,6 +14,7 @@ if (currentBranch === 'master') {
 }
 
 // 合并代码到master
+spawnSync('git', ['push'], { stdio: 'inherit' });
 spawnSync('git', ['checkout', 'master'], { stdio: 'ignore' });
 spawnSync('git', ['pull'], { stdio: 'ignore' });
 spawnSync('git', ['merge', '--no-ff', currentBranch, '--message', `merge: ${currentBranch} was automatically merged`], { stdio: 'ignore' });
