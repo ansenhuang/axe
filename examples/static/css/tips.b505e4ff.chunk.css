@@ -22,7 +22,6 @@
 }
 
 .body--2AXgM {
-  min-width: 8.58em;
   max-width: 72%;
   padding: 0.7em;
   font-size: 1em;
@@ -102,7 +101,7 @@
   margin: 30px auto;
   width: 90%;
   padding: 20px 20px;
-  font-size: 28px;
+  font-size: 32px;
   color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -111,13 +110,13 @@
 
 .icon--23pYI {
   display: block;
-  width: 76px;
+  width: 260px;
   height: 76px;
   margin: 35px auto 22px;
   background-color: transparent;
   background-repeat: no-repeat;
-  background-position: 0 0;
-  background-size: 100%;
+  background-position: center;
+  background-size: auto 100%;
 }
 
 .icon-loading--F3AlX {
@@ -167,4 +166,4 @@
 }
 
 
-/*# sourceMappingURL=tips.0fb7c637.chunk.css.map*/
+/*# sourceMappingURL=tips.b505e4ff.chunk.css.map*/
