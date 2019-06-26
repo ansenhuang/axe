@@ -20,9 +20,7 @@
     "tips"
   ],
   "scripts": {
-    "build": "node ../../scripts/build.js",
-    "lint": "node ../../scripts/lint.js",
-    "lint:fix": "node ../../scripts/lint.js --fix"
+    "build": "node ../../scripts/build.js"
   },
   "homepage": "https://github.com/ansenhuang/axe/tree/master/packages/tips#readme",
   "repository": {

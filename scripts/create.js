@@ -33,9 +33,7 @@ function createPackage(data, targetPath) {
       data.name,
     ],
     scripts: {
-      "build": "node ../../scripts/build.js",
-      "lint": "node ../../scripts/lint.js",
-      "lint:fix": "node ../../scripts/lint.js --fix"
+      "build": "node ../../scripts/build.js"
     },
     homepage: `https://github.com/ansenhuang/axe/tree/master/packages/${data.name}#readme`,
     repository: {
@@ -55,8 +53,8 @@ function createReadme(data, targetPath) {
 
 [![npm version](https://img.shields.io/npm/v/@axe/${data.name}.svg)](https://www.npmjs.org/package/@axe/${data.name})
 [![npm downloads](https://img.shields.io/npm/dt/@axe/${data.name}.svg)](http://npm-stat.com/charts.html?package=@axe/${data.name})
-[![examples](https://img.shields.io/badge/examples-🚀-yellow.svg)](https://ansenhuang.github.io/axe/examples/${data.name}.html)
 [![License](https://img.shields.io/npm/l/@axe/${data.name}.svg)](https://github.com/ansenhuang/axe/blob/master/LICENSE)
+[![examples](https://img.shields.io/badge/examples-🚀-yellow.svg)](https://ansenhuang.github.io/axe/examples/${data.name}.html)
 
 ${data.description}
 
