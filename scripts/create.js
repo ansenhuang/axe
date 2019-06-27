@@ -52,6 +52,8 @@ function createReadme(data, targetPath) {
 `# [@axe/${data.name}](https://www.npmjs.org/package/@axe/${data.name})
 
 [![npm version](https://img.shields.io/npm/v/@axe/${data.name}.svg)](https://www.npmjs.org/package/@axe/${data.name})
+[![build status](https://img.shields.io/travis/ansenhuang/axe.svg)](https://travis-ci.org/ansenhuang/axe)
+[![code coverage](https://img.shields.io/codecov/c/github/ansenhuang/axe.svg)](https://codecov.io/gh/ansenhuang/axe)
 [![npm downloads](https://img.shields.io/npm/dt/@axe/${data.name}.svg)](http://npm-stat.com/charts.html?package=@axe/${data.name})
 [![License](https://img.shields.io/npm/l/@axe/${data.name}.svg)](https://github.com/ansenhuang/axe/blob/master/LICENSE)
 [![examples](https://img.shields.io/badge/examples-🚀-yellow.svg)](https://ansenhuang.github.io/axe/examples/${data.name}.html)
