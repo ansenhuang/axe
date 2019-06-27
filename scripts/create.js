@@ -20,7 +20,7 @@ function createPackage(data, targetPath) {
     main: 'lib/index.cjs.js',
     module: 'lib/index.esm.js',
     browser: 'lib/index.umd.js',
-    unpkg: 'unpkg/index.ts',
+    unpkg: 'unpkg/index.js',
     typings: 'unpkg/index.d.ts',
     files: [
       'lib',
