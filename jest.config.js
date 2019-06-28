@@ -1,4 +1,5 @@
 module.exports = {
+  verbose: false,
   clearMocks: true,
   coverageDirectory: 'coverage',
   collectCoverageFrom: [

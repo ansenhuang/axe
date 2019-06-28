@@ -1,0 +1,98 @@
+.modal {
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.body {
+  width: 72%;
+  max-width: 540px;
+  border-radius: 0.29em;
+  background-color: #fff;
+  animation: modalBounceEnter 0.75s ease;
+}
+
+.title {
+  font-size: 1.29em;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.71em;
+  margin-bottom: -0.36em;
+}
+
+.content {
+  padding: 1.43em 0.71em;
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.btnWrap {
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  flex-grow: 1;
+  font-size: 1em;
+  text-align: center;
+  line-height: 2.86em;
+  background-color: transparent;
+}
+
+.btnConfirm {
+  color: #333;
+}
+
+.btnCancel {
+  color: #999;
+  border-right: 1px solid #e5e5e5;
+}
+
+@keyframes modalBounceEnter {
+  0% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  60% {
+    opacity: 1;
+    transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
