@@ -22,14 +22,15 @@
 }
 
 .body {
-  max-width: 72%;
-  padding: 0.7em;
+  min-width: 240px;
+  max-width: 540px;
+  padding: 0.71em;
   font-size: 1em;
   color: #fff;
   line-height: 1.5;
   text-align: center;
   word-wrap: break-word;
-  border-radius: 0.3em;
+  border-radius: 0.29em;
   background-color: rgba(0, 0, 0, 0.7);
   animation: tipsBounceEnter 0.75s ease;
 }

@@ -3,7 +3,7 @@
  * @module @axe/tips
  */ /** */
 
-import styles from './index.css';
+import styles from './style.css';
 
 /**
  * options of `tips.show`
@@ -13,73 +13,32 @@ export interface Options {
   content?: string;
   contentHtml?: string;
   duration?: number;
-  preventScroll?: boolean;
 }
+
+type Callback = () => void;
 
 /**
  * class Tips
  */
 export class Tips {
-  private tipsNode: HTMLDivElement;
-  private layerNode: HTMLDivElement;
-  private bodyNode: HTMLDivElement;
-  private preventScroll: boolean;
-  private callback: (() => void) | undefined;
-  private timerId: number | undefined;
+  private tipsEl: HTMLDivElement;
+  private layerEl: HTMLDivElement;
+  private bodyEl: HTMLDivElement;
+  private callback?: Callback;
+  private timerId?: number;
 
   constructor(el: HTMLElement = document.body) {
-    this.preventScroll = true;
     // create element
-    this.tipsNode = document.createElement('div');
-    this.layerNode = document.createElement('div');
-    this.bodyNode = document.createElement('div');
-    // hide tips by default
-    this.tipsNode.style.display = 'none';
+    this.tipsEl = document.createElement('div');
+    this.layerEl = document.createElement('div');
+    this.bodyEl = document.createElement('div');
 
-    // add className
-    this.tipsNode.className = styles.tips;
-    this.layerNode.className = styles.layer;
-    this.bodyNode.className = styles.body;
-    // apppend element
-    this.tipsNode.appendChild(this.layerNode);
-    this.tipsNode.appendChild(this.bodyNode);
-
-    this.setScale(document.documentElement.clientWidth / 750);
-
-    // prevent default scroll
-    this.tipsNode.addEventListener(
-      'touchmove',
-      (e: TouchEvent) => {
-        if (!this.preventScroll) {
-          return;
-        }
-
-        let target: HTMLElement = e.target as HTMLElement;
-        while (target !== this.tipsNode && typeof target.dataset.scroll === 'undefined') {
-          target = target.parentElement as HTMLElement;
-        }
-        if (target === this.tipsNode) {
-          e.preventDefault();
-        }
-      },
-      {
-        passive: false,
-        capture: false,
-      },
-    );
+    this.scaleResize();
+    this.initRender();
+    this.initEvents();
 
     // append in view
-    el.appendChild(this.tipsNode);
-  }
-
-  /**
-   * adjust the size of tips,
-   * it will adjust automatically based on client width by default
-   */
-  public setScale(scale?: number): void {
-    if (scale) {
-      this.tipsNode.style.fontSize = 28 * scale + 'px';
-    }
+    el.appendChild(this.tipsEl);
   }
 
   /**
@@ -96,14 +55,13 @@ export class Tips {
       options = { content: options };
     }
 
-    this.tipsNode.style.zIndex = typeof options.zIndex === 'number' ? '' + options.zIndex : null;
-    this.preventScroll = options.preventScroll !== false;
+    this.tipsEl.style.zIndex = typeof options.zIndex === 'number' ? '' + options.zIndex : null;
     if (!options.contentHtml) {
-      this.bodyNode.textContent = options.content || '';
+      this.bodyEl.textContent = options.content || '';
     } else {
-      this.bodyNode.innerHTML = options.contentHtml;
+      this.bodyEl.innerHTML = options.contentHtml;
     }
-    this.tipsNode.style.display = null; // show
+    this.tipsEl.style.display = null; // show
 
     this.callback = callback;
     this.timerId = window.setTimeout(() => {
@@ -119,7 +77,44 @@ export class Tips {
    * hide tips
    */
   public hide(): void {
-    this.tipsNode.style.display = 'none';
+    this.tipsEl.style.display = 'none';
+  }
+
+  private scaleResize = () => {
+    this.tipsEl.style.fontSize = 28 * Math.min(document.documentElement.clientWidth / 750, 1) + 'px';
+  };
+
+  private initRender() {
+    this.tipsEl.style.display = 'none';
+
+    // add className
+    this.tipsEl.className = styles.tips;
+    this.layerEl.className = styles.layer;
+    this.bodyEl.className = styles.body;
+    // apppend element
+    this.tipsEl.appendChild(this.layerEl);
+    this.tipsEl.appendChild(this.bodyEl);
+  }
+
+  private initEvents() {
+    window.addEventListener('resize', this.scaleResize);
+    // prevent default scroll
+    this.tipsEl.addEventListener(
+      'touchmove',
+      (e: TouchEvent) => {
+        let target: HTMLElement = e.target as HTMLElement;
+        while (target !== this.tipsEl && typeof target.dataset.scroll === 'undefined') {
+          target = target.parentElement as HTMLElement;
+        }
+        if (target === this.tipsEl) {
+          e.preventDefault();
+        }
+      },
+      {
+        passive: false,
+        capture: false,
+      },
+    );
   }
 }
 
