@@ -2,8 +2,23 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Example</title>
+  <script>
+    (function() {
+      var docEl = document.documentElement;
+      var metaEl = document.createElement('meta');
+      var scale = 1 / window.devicePixelRatio;
+      metaEl.setAttribute('name', 'viewport');
+      metaEl.setAttribute('content', 'width=device-width, initial-scale='+scale+', maximum-scale='+scale+', minimum-scale='+scale+', user-scalable=no, viewport-fit=cover');
+      docEl.firstElementChild.appendChild(metaEl);
+    })();
+  </script>
+  <style>
+    body {
+      margin: 0 auto;
+      max-width: 750px;
+    }
+  </style>
 </head>
 <body>
   <div id="root"></div>
