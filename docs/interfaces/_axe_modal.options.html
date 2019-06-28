@@ -52,10 +52,10 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_axe_tips.html">@axe/tips</a>
+					<a href="../modules/_axe_modal.html">@axe/modal</a>
 				</li>
 				<li>
-					<a href="_axe_tips.options.html">Options</a>
+					<a href="_axe_modal.options.html">Options</a>
 				</li>
 			</ul>
 			<h1>Interface Options</h1>
@@ -68,7 +68,7 @@
 			<section class="tsd-panel tsd-comment">
 				<div class="tsd-comment tsd-typography">
 					<div class="lead">
-						<p>options of <code>tips.show</code></p>
+						<p>options of <code>modal.show</code></p>
 					</div>
 				</div>
 			</section>
@@ -87,10 +87,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_tips.options.html#content" class="tsd-kind-icon">content</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_tips.options.html#contenthtml" class="tsd-kind-icon">content<wbr>Html</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_tips.options.html#duration" class="tsd-kind-icon">duration</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_tips.options.html#zindex" class="tsd-kind-icon">z<wbr>Index</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#callback" class="tsd-kind-icon">callback</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#cancelcolor" class="tsd-kind-icon">cancel<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#canceltext" class="tsd-kind-icon">cancel<wbr>Text</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#closebylayer" class="tsd-kind-icon">close<wbr>ByLayer</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#confirmcolor" class="tsd-kind-icon">confirm<wbr>Color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#confirmtext" class="tsd-kind-icon">confirm<wbr>Text</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#content" class="tsd-kind-icon">content</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#contenthtml" class="tsd-kind-icon">content<wbr>Html</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#title" class="tsd-kind-icon">title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_axe_modal.options.html#zindex" class="tsd-kind-icon">z<wbr>Index</a></li>
 							</ul>
 						</section>
 					</div>
@@ -99,12 +105,72 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="callback" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> callback</h3>
+					<div class="tsd-signature tsd-kind-icon">callback<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Callback</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L30">modal/src/index.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="cancelcolor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cancel<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">cancel<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L27">modal/src/index.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="canceltext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> cancel<wbr>Text</h3>
+					<div class="tsd-signature tsd-kind-icon">cancel<wbr>Text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L28">modal/src/index.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="closebylayer" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> close<wbr>ByLayer</h3>
+					<div class="tsd-signature tsd-kind-icon">close<wbr>ByLayer<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">true</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L29">modal/src/index.ts:29</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="confirmcolor" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> confirm<wbr>Color</h3>
+					<div class="tsd-signature tsd-kind-icon">confirm<wbr>Color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L25">modal/src/index.ts:25</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="confirmtext" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> confirm<wbr>Text</h3>
+					<div class="tsd-signature tsd-kind-icon">confirm<wbr>Text<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L26">modal/src/index.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="content" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagOptional">Optional</span> content</h3>
 					<div class="tsd-signature tsd-kind-icon">content<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/tips/src/index.ts#L13">tips/src/index.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L23">modal/src/index.ts:23</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -114,17 +180,17 @@
 					<div class="tsd-signature tsd-kind-icon">content<wbr>Html<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/tips/src/index.ts#L14">tips/src/index.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L24">modal/src/index.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="duration" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> duration</h3>
-					<div class="tsd-signature tsd-kind-icon">duration<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="title" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/tips/src/index.ts#L15">tips/src/index.ts:15</a></li>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L22">modal/src/index.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -134,7 +200,7 @@
 					<div class="tsd-signature tsd-kind-icon">z<wbr>Index<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/tips/src/index.ts#L12">tips/src/index.ts:12</a></li>
+							<li>Defined in <a href="https://github.com/ansenhuang/axe/blob/b11c171/packages/modal/src/index.ts#L21">modal/src/index.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -146,46 +212,64 @@
 					<li class="globals  ">
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
+					<li class="current tsd-kind-external-module">
 						<a href="../modules/_axe_modal.html">@axe/modal</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="../modules/_axe_precision.html">@axe/precision</a>
 					</li>
-					<li class="current tsd-kind-external-module">
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/_axe_tips.html">@axe/tips</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+						<a href="../enums/_axe_modal.closetype.html" class="tsd-kind-icon">Close<wbr>Type</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_axe_tips.tips.html" class="tsd-kind-icon">Tips</a>
+						<a href="../classes/_axe_modal.modal.html" class="tsd-kind-icon">Modal</a>
 					</li>
 				</ul>
 				<ul class="current">
 					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_axe_tips.options.html" class="tsd-kind-icon">Options</a>
+						<a href="_axe_modal.options.html" class="tsd-kind-icon">Options</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_axe_tips.options.html#content" class="tsd-kind-icon">content</a>
+								<a href="_axe_modal.options.html#callback" class="tsd-kind-icon">callback</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_axe_tips.options.html#contenthtml" class="tsd-kind-icon">content<wbr>Html</a>
+								<a href="_axe_modal.options.html#cancelcolor" class="tsd-kind-icon">cancel<wbr>Color</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_axe_tips.options.html#duration" class="tsd-kind-icon">duration</a>
+								<a href="_axe_modal.options.html#canceltext" class="tsd-kind-icon">cancel<wbr>Text</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_axe_tips.options.html#zindex" class="tsd-kind-icon">z<wbr>Index</a>
+								<a href="_axe_modal.options.html#closebylayer" class="tsd-kind-icon">close<wbr>ByLayer</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_axe_modal.options.html#confirmcolor" class="tsd-kind-icon">confirm<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_axe_modal.options.html#confirmtext" class="tsd-kind-icon">confirm<wbr>Text</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_axe_modal.options.html#content" class="tsd-kind-icon">content</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_axe_modal.options.html#contenthtml" class="tsd-kind-icon">content<wbr>Html</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_axe_modal.options.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_axe_modal.options.html#zindex" class="tsd-kind-icon">z<wbr>Index</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
-						<a href="../modules/_axe_tips.html#tips-1" class="tsd-kind-icon">tips</a>
-					</li>
 				</ul>
 			</nav>
 		</div>

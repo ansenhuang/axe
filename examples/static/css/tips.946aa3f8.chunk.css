@@ -1,4 +1,4 @@
-.tips--3GZNi {
+.tips--1CWV6 {
   font-size: 14px;
   position: fixed;
   top: 0;
@@ -11,7 +11,7 @@
   justify-content: center;
 }
 
-.layer--wzTGJ {
+.layer--3h42Q {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -21,21 +21,22 @@
   background-color: transparent;
 }
 
-.body--2AXgM {
-  max-width: 72%;
-  padding: 0.7em;
+.body--2facT {
+  min-width: 240px;
+  max-width: 540px;
+  padding: 0.71em;
   font-size: 1em;
   color: #fff;
   line-height: 1.5;
   text-align: center;
   word-wrap: break-word;
-  border-radius: 0.3em;
+  border-radius: 0.29em;
   background-color: rgba(0, 0, 0, 0.7);
-  -webkit-animation: tipsBounceEnter--380zZ 0.75s ease;
-          animation: tipsBounceEnter--380zZ 0.75s ease;
+  -webkit-animation: tipsBounceEnter--3ZlfD 0.75s ease;
+          animation: tipsBounceEnter--3ZlfD 0.75s ease;
 }
 
-@-webkit-keyframes tipsBounceEnter--380zZ {
+@-webkit-keyframes tipsBounceEnter--3ZlfD {
   0% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
@@ -65,7 +66,7 @@
   }
 }
 
-@keyframes tipsBounceEnter--380zZ {
+@keyframes tipsBounceEnter--3ZlfD {
   0% {
     opacity: 0;
     -webkit-transform: scale3d(0.3, 0.3, 0.3);
@@ -100,7 +101,7 @@
   display: block;
   margin: 30px auto;
   width: 90%;
-  padding: 20px 20px;
+  padding: 20px;
   font-size: 32px;
   color: #fff;
   border: 1px solid #ccc;
@@ -166,4 +167,4 @@
 }
 
 
-/*# sourceMappingURL=tips.b505e4ff.chunk.css.map*/
+/*# sourceMappingURL=tips.946aa3f8.chunk.css.map*/

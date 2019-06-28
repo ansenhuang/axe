@@ -1,0 +1,159 @@
+.modal--2WU9J {
+  font-size: 14px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.layer--3M0Bo {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.body--3YQS2 {
+  width: 72%;
+  max-width: 540px;
+  border-radius: 0.29em;
+  background-color: #fff;
+  -webkit-animation: modalBounceEnter--2LSX0 0.75s ease;
+          animation: modalBounceEnter--2LSX0 0.75s ease;
+}
+
+.title--2ui_8 {
+  font-size: 1.29em;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 0.71em;
+  margin-bottom: -0.36em;
+}
+
+.content--1mr91 {
+  padding: 1.43em 0.71em;
+  font-size: 1em;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+  word-wrap: break-word;
+}
+
+.btnWrap--2ddiI {
+  display: flex;
+  border-top: 1px solid #e5e5e5;
+}
+
+.btn--3dRr0 {
+  border: none;
+  outline: none;
+  border-radius: 0;
+  flex-grow: 1;
+  font-size: 1em;
+  text-align: center;
+  line-height: 2.86em;
+  background-color: transparent;
+}
+
+.btnConfirm--1xpQ_ {
+  color: #333;
+}
+
+.btnCancel--h1IAk {
+  color: #999;
+  border-right: 1px solid #e5e5e5;
+}
+
+@-webkit-keyframes modalBounceEnter--2LSX0 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes modalBounceEnter--2LSX0 {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(0.3, 0.3, 0.3);
+            transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  20% {
+    -webkit-transform: scale3d(1.1, 1.1, 1.1);
+            transform: scale3d(1.1, 1.1, 1.1);
+  }
+
+  40% {
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+
+  60% {
+    opacity: 1;
+    -webkit-transform: scale3d(1.03, 1.03, 1.03);
+            transform: scale3d(1.03, 1.03, 1.03);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+            transform: scale3d(1, 1, 1);
+  }
+}
+
+.button--NJqsR {
+  outline: 0;
+  display: block;
+  margin: 30px auto;
+  width: 90%;
+  padding: 20px 0;
+  font-size: 32px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #6c72c9;
+}
+
+.input--2nfU6 {
+  outline: 0;
+  display: block;
+  width: 100%;
+  font-size: 32px;
+  line-height: 1.5;
+  border: 1px solid #ccc;
+}
+
+
+/*# sourceMappingURL=modal.e6913c30.chunk.css.map*/
