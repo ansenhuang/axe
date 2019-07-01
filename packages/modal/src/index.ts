@@ -212,5 +212,5 @@ export class Modal {
 /**
  * modal instance
  */
-const modal = new Modal();
+export const modal = new Modal();
 export default modal;
