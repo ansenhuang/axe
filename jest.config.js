@@ -18,8 +18,9 @@ module.exports = {
       extends: './babel.config.js',
     },
   },
-  roots: ['<rootDir>tests'],
-  testMatch: ['**/*.test.ts'],
+  testMatch: [
+    '<rootDir>/tests/**/*.test.ts'
+  ],
   moduleFileExtensions: ['ts', 'js'],
   modulePathIgnorePatterns: [],
   moduleNameMapper: {
