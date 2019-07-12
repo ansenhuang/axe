@@ -5,6 +5,9 @@
 
 import { Data } from './interfaces';
 
+/**
+ * @ignore
+ */
 export const toQueryString = (data: Data) => {
   return Object.keys(data)
     .map((key) => {
@@ -17,6 +20,9 @@ export const toQueryString = (data: Data) => {
     .join('&');
 };
 
+/**
+ * @ignore
+ */
 export const appendToUrl = (url: string, data: Data | string) => {
   const urls = url.split('#');
   const sign = urls[0].includes('?') ? '&' : '?';
@@ -24,6 +30,9 @@ export const appendToUrl = (url: string, data: Data | string) => {
   return urls[0] + (query ? sign + query : '') + (urls[1] || '');
 };
 
+/**
+ * @ignore
+ */
 export const parseJSON = (json: Data | string) => {
   if (typeof json === 'string') {
     try {

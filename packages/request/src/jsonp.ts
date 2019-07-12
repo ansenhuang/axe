@@ -7,6 +7,9 @@ import { Options, Request } from './interfaces';
 import { config } from './request';
 import { appendToUrl, parseJSON } from './utils';
 
+/**
+ * @ignore
+ */
 export const jsonp: Request = (options: Options) => {
   return new Promise((resolve, reject) => {
     const callbackName = 'axe_request_' + Date.now();

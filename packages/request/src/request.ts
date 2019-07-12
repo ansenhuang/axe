@@ -13,6 +13,9 @@ const contentType = {
   text: 'text/plain; charset=utf-8',
 };
 
+/**
+ * @ignore
+ */
 export const config: Config = {
   dataType: 'form',
   jsonpCallback: 'callback',

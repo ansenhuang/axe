@@ -8,6 +8,9 @@ type AfterResponse = (response: Response) => Response;
 type Method = 'get' | 'post' | 'jsonp' | string;
 type DataType = 'form' | 'json' | 'text';
 
+/**
+ * @ignore
+ */
 export interface Data {
   [key: string]: any;
 }
