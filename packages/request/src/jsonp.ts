@@ -13,7 +13,7 @@ export const jsonp: Request = (options: Options) => {
     if (typeof options.query === 'string') {
       query += `&${config.jsonpCallback}=${callbackName}`;
     } else {
-      (query as any)[config.jsonpCallback] = callbackName;
+      (query as any)[config.jsonpCallback as string] = callbackName;
     }
 
     (window as any)[callbackName] = (result: any) => {

@@ -39,7 +39,7 @@ export const request: Request = (options: Options) => {
     options.headers = {};
   }
 
-  const dataType = options.dataType || config.dataType;
+  const dataType = (options.dataType || config.dataType)!;
   (options.headers as any)['Content-Type'] = contentType[dataType];
 
   if (options.method === 'JSONP') {
