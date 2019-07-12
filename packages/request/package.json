@@ -1,0 +1,33 @@
+{
+  "name": "@axe/request",
+  "version": "1.0.0",
+  "description": "A tiny library for request.",
+  "author": "ansenhuang <ancheng1992@126.com>",
+  "license": "MIT",
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "browser": "lib/index.umd.js",
+  "unpkg": "unpkg/index.js",
+  "typings": "unpkg/index.d.ts",
+  "files": [
+    "lib",
+    "unpkg"
+  ],
+  "keywords": [
+    "TypeScript",
+    "JavaScript",
+    "axe",
+    "request"
+  ],
+  "scripts": {
+    "build": "node ../../scripts/build.js"
+  },
+  "homepage": "https://github.com/ansenhuang/axe/tree/master/packages/request#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ansenhuang/axe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ansenhuang/axe/issues"
+  }
+}

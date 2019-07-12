@@ -2,9 +2,10 @@ module.exports = {
   verbose: false,
   clearMocks: true,
   coverageDirectory: 'coverage',
-  collectCoverageFrom: [
-    'packages/**/*.ts',
-  ],
+  // collectCoverageFrom: [
+  //   'packages/**/*.ts',
+  //   '!**/*.d.ts',
+  // ],
   coverageThreshold: {
     global: {
       branches: 80,
@@ -18,8 +19,9 @@ module.exports = {
       extends: './babel.config.js',
     },
   },
-  roots: ['<rootDir>tests'],
-  testMatch: ['**/*.test.ts'],
+  testMatch: [
+    '<rootDir>/tests/**/*.test.ts'
+  ],
   moduleFileExtensions: ['ts', 'js'],
   modulePathIgnorePatterns: [],
   moduleNameMapper: {

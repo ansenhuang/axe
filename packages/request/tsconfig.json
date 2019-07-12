@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "declaration": true,
+    "baseUrl": "./",
+    "rootDir": "./src",
+    "outDir": "./unpkg"
+  },
+  "include": [
+    "./src"
+  ]
+}
