@@ -2,9 +2,10 @@ module.exports = {
   verbose: false,
   clearMocks: true,
   coverageDirectory: 'coverage',
-  collectCoverageFrom: [
-    'packages/**/*.ts',
-  ],
+  // collectCoverageFrom: [
+  //   'packages/**/*.ts',
+  //   '!**/*.d.ts',
+  // ],
   coverageThreshold: {
     global: {
       branches: 80,
