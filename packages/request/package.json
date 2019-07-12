@@ -1,6 +1,6 @@
 {
   "name": "@axe/request",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A tiny library for request.",
   "author": "ansenhuang <ancheng1992@126.com>",
   "license": "MIT",
