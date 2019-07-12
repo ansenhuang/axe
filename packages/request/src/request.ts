@@ -1,3 +1,8 @@
+/**
+ * A tiny library for request.
+ * @module @axe/request
+ */ /** */
+
 import { Config, Data, Options, Request } from './interfaces';
 import { jsonp } from './jsonp';
 import { appendToUrl, parseJSON, toQueryString } from './utils';

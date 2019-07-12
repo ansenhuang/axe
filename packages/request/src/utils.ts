@@ -1,3 +1,8 @@
+/**
+ * A tiny library for request.
+ * @module @axe/request
+ */ /** */
+
 import { Data } from './interfaces';
 
 export const toQueryString = (data: Data) => {

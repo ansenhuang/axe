@@ -1,3 +1,8 @@
+/**
+ * A tiny library for request.
+ * @module @axe/request
+ */ /** */
+
 import { Options, Request } from './interfaces';
 import { config } from './request';
 import { appendToUrl, parseJSON } from './utils';

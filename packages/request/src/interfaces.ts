@@ -1,3 +1,8 @@
+/**
+ * A tiny library for request.
+ * @module @axe/request
+ */ /** */
+
 type BeforeRequest = (options: Options) => Options;
 type AfterResponse = (response: Response) => Response;
 type Method = 'get' | 'post' | 'jsonp' | string;
